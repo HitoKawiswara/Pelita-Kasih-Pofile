@@ -85,3 +85,14 @@ Then setup your DB_DATABASE, DB_USERNAME & DB_PASSWORD in .env file. After setup
 |php artisan serve — port=8080
 
 All set! You are ready to fly.
+
+## Buat run sementara
+
+Buka 2 Terminal
+
+Terminal 1
+|npm run dev
+
+Terminal 2
+|php artisan serve
+
