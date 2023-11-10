@@ -84,6 +84,14 @@ Then setup your DB_DATABASE, DB_USERNAME & DB_PASSWORD in .env file. After setup
 |php artisan ser (In short)
 |php artisan serve — port=8080
 
+Setup storage link
+
+|php artisan storage:link
+
+Make new folder called assets in public/storage/
+
+Put logo in public/storage/assets
+
 All set! You are ready to fly.
 
 ## Buat run sementara
