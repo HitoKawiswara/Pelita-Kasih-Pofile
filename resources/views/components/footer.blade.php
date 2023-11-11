@@ -1,75 +1,46 @@
-<div class="d-flex">
-    <div class="mx-5 py-4">
-        <div class="d-flex align-items-center">
-            <img src="{{ asset('storage/assets/logo1.png') }}" alt="pelita-kasih-logo-1" style="width:7.5%;" class="">
-            <h1 class="mx-3 fw-bold">INFORMASI PENDAFTARAN</h1>
-        </div>
-        <!--  -->
-        <div class="d-flex mt-3 gap-5">
-            <div class="w-50">
-                <h2 class="fw-bold fs-4">KB - TK PELITA KASIH</h2>
-                <div class="fs-5">
-                    <div class="d-flex gap-3 my-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#3c2b71" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                          </svg>
-                        <p class="m-0">(021) 5595 3449</p>
-                    </div>
-                    <div class="d-flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3c2b71" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                        </svg>
-                        <p class="w-75 m-0">Taman Palem Lestari
-                            Blok B18/26 Cengkareng,
-                            Jakarta Barat
-                        </p>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}" />
+  </head>
+  <body>
+    <div class="index-html">
+      <div class="div">
+        <footer class="footer">
+          <div class="rectangle"></div>
+          <div class="overlap-group">
+            <div class="rectangle-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="KB-TK">
+              <img class="image" src="https://c.animaapp.com/ltBOnBlJ/img/image-23@2x.png" />
+              <div class="text-wrapper">(021) 5595 3449</div>
+              <p class="taman-palem-lestari">Taman Palem Lestari<br />Blok B18/26 Cengkareng, Jakarta Barat</p>
+              <p class="p">KB - TK PELITA KASIH</p>
+              <img class="img" src="https://c.animaapp.com/ltBOnBlJ/img/image-24@2x.png" />
             </div>
-            <div class="w-50">
-                <h2 class="fw-bold fs-4">SD PELITA KASIH</h2>
-                <div class="fs-5">
-                    <div class="d-flex gap-3 my-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#3c2b71" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                          </svg>
-                        <p class="m-0">(021) 5595 3449</p>
-                    </div>
-                    <div class="d-flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3c2b71" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                        </svg>
-                        <p class="w-75 m-0">Taman Palem Lestari
-                            Blok B18/26 Cengkareng,
-                            Jakarta Barat
-                        </p>
-                    </div>
-                </div>
+            <div class="SMP-SMA">
+              <p class="text-wrapper-2">SMP - SMA PELITA KASIH</p>
+              <img class="image-2" src="https://c.animaapp.com/ltBOnBlJ/img/image-27@2x.png" />
+              <div class="text-wrapper-3">(021) 5595 2526</div>
+              <p class="taman-palem-lestari-2">Taman Palem Lestari<br />Blok E9/1 Cengkareng, Jakarta Barat</p>
+              <img class="image-3" src="https://c.animaapp.com/ltBOnBlJ/img/image-28@2x.png" />
             </div>
-            <div class="w-50">
-                <h2 class="fw-bold fs-4">SMP - SMA PELITA KASIH</h2>
-                <div class="fs-5">
-                    <div class="d-flex gap-3 my-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#3c2b71" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                          </svg>
-                        <p class="m-0">(021) 5595 3449</p>
-                    </div>
-                    <div class="d-flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3c2b71" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                        </svg>
-                        <p class="w-75 m-0">Taman Palem Lestari
-                            Blok B18/26 Cengkareng,
-                            Jakarta Barat
-                        </p>
-                    </div>
-                </div>
+            <div class="SD">
+              <div class="text-wrapper-4">SD PELITA KASIH</div>
+              <img class="image" src="https://c.animaapp.com/ltBOnBlJ/img/image-25-2@2x.png" />
+              <div class="text-wrapper">(021) 5595 2655</div>
+              <p class="taman-palem-lestari">Taman Palem Lestari <br />Blok E9/1 Cengkareng, Jakarta Barat</p>
+              <img class="img" src="https://c.animaapp.com/ltBOnBlJ/img/image-26-2@2x.png" />
             </div>
-        </div>
+            <div class="text-wrapper-5">INFORMASI PENDAFTARAN</div>
+            <p class="text-wrapper-6">@ 2023 Copyright Sekolah Pelita Kasih Jakarta</p>
+            <img class="image-4" src="https://c.animaapp.com/ltBOnBlJ/img/image-29@2x.png" />
+            <p class="image-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11464.141275248467!2d106.71541545059756!3d-6.14163806017808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a02ae78989715%3A0xb5facf9fb1d5d389!2sSekolah%20Pelita%20Kasih%20Jakarta!5e0!3m2!1sid!2sid!4v1699449397530!5m2!1sid!2sid" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </p>
+
+          </div>
+        </footer>
+      </div>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5095.198325562878!2d106.72339382683217!3d-6.138533706931063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7fe3a66985d%3A0xe008eb02e7d44535!2sYayasan%20Pelita%20Kasih!5e0!3m2!1sen!2sid!4v1699628314042!5m2!1sen!2sid" width="60%" style="border:0;" allowfullscreen="false" aria-hidden="false" tabindex="0"></iframe>
-</div>
-<div class="bg-primary text-white py-2 px-5">
-    @ 2023 Copyright Sekolah Pelita Kasih Jakarta
-</div>
+  </body>
+</html>

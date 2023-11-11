@@ -1,0 +1,234 @@
+
+
+.index-html .rectangle {
+    position: absolute;
+    width: 200vh;
+    height: 28px;
+    top: 0;
+    left: 0;
+    background-color: #200769;
+  }
+  
+  .index-html .overlap-group {
+    position: absolute;
+    width: 1443px;
+    height: 410px;
+    top: 44px;
+    left: 0;
+  }
+  
+  .index-html .rectangle-3 {
+    position: absolute;
+    width: 200vh;
+    height: 79px;
+    top: 314px;
+    left: 0px;
+    background-color: #200769;
+  }
+  
+  .index-html .KB-TK {
+    position: absolute;
+    width: 298px;
+    height: 137px;
+    top: 115px;
+    left: 71px;
+  }
+  
+  .index-html .image {
+    position: absolute;
+    width: 33px;
+    height: 36px;
+    top: 41px;
+    left: 1px;
+    object-fit: cover;
+  }
+  
+  .index-html .text-wrapper {
+    width: 116px;
+    height: 30px;
+    top: 42px;
+    left: 44px;
+    color: #200769;
+    font-size: 16px;
+    line-height: 20.8px;
+    position: absolute;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  
+  .index-html .taman-palem-lestari {
+    position: absolute;
+    width: 194px;
+    height: 60px;
+    top: 83px;
+    left: 44px;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    color: #200769;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20.8px;
+  }
+  
+  .index-html .p {
+    position: absolute;
+    width: 212px;
+    height: 27px;
+    top: 0;
+    left: 5px;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    color: #200769;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+  
+  .index-html .img {
+    position: absolute;
+    width: 34px;
+    height: 35px;
+    top: 90px;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .index-html .SMP-SMA {
+    position: absolute;
+    width: 298px;
+    height: 138px;
+    top: 114px;
+    left: 742px;
+  }
+  
+  .index-html .text-wrapper-2 {
+    position: absolute;
+    width: 226px;
+    height: 27px;
+    top: 0;
+    left: 1px;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    color: #200769;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+  
+  .index-html .image-2 {
+    position: absolute;
+    width: 33px;
+    height: 36px;
+    top: 43px;
+    left: 1px;
+    object-fit: cover;
+  }
+  
+  .index-html .text-wrapper-3 {
+    width: 116px;
+    height: 30px;
+    top: 44px;
+    left: 44px;
+    color: #200769;
+    font-size: 16px;
+    line-height: 20.8px;
+    position: absolute;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  
+  .index-html .taman-palem-lestari-2 {
+    position: absolute;
+    width: 194px;
+    height: 60px;
+    top: 85px;
+    left: 44px;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    color: #200769;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20.8px;
+  }
+  
+  .index-html .image-3 {
+    position: absolute;
+    width: 34px;
+    height: 35px;
+    top: 91px;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .index-html .SD {
+    position: absolute;
+    width: 298px;
+    height: 137px;
+    top: 115px;
+    left: 406px;
+  }
+  
+  .index-html .text-wrapper-4 {
+    position: absolute;
+    width: 212px;
+    height: 27px;
+    top: 0;
+    left: 0;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    color: #200769;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+  
+  .index-html .text-wrapper-5 {
+    position: absolute;
+    width: 713px;
+    height: 26px;
+    top: 22px;
+    left: 232px;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    color: #200769;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: 62.4px;
+    white-space: nowrap;
+  }
+  
+  .index-html .text-wrapper-6 {
+    position: absolute;
+    width: 524px;
+    height: 26px;
+    top: 341px;
+    left: 77px;
+    font-family: "DM Serif Text", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+  
+  .index-html .image-4 {
+    position: absolute;
+    width: 103px;
+    height: 103px;
+    top: 0;
+    left: 89px;
+    object-fit: cover;
+  }
+  
+  .index-html .image-5 {
+    position: absolute;
+    left: 120vh;
+    object-fit: cover;
+  }
+  

@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.boxheader {
+    width: 100%; 
+    height: 200%; 
+    background: #586162;
+    text-align: center;
+    align-items: center;
+}
+
+.sambutankepsek {
+    width: 100%;
+    height: 100%;
+    background: #200769;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 0.5%;
+}
+
+.struktursekolah {
+    width: 100%;
+    height: 2080px;
+    background: white;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 27%;
+    height: 22%;
+    border-radius: 5px;
+    margin: 0 2% 0% 2%;
+}
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+img {
+    border-radius: 5px 5px 0 0;
+    height:auto;
+}
+
+.containerparagraph {
+    padding: 2% 2%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container {
+    padding: 2% 23%;
+    align-items: center;
+}
+
+.cardbox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.navigation {
+    text-align: left;
+    margin-top: 5%;
+    margin-left: 5.5%;
+  }
+  
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1%;
+  }
+
+  .buttonnow {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: grey;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1%;
+  }
+  
+  .nav-button:hover {
+    background-color: grey;
+  }
+  
