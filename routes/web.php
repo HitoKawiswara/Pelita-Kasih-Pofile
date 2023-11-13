@@ -37,3 +37,7 @@ Route::get('/fasilitas', function() {
     return view('user.fasilitas');
 })->name('fasilitas');
 
+Route::get('/profile', function() {
+    return view('user.profil');
+})->name('profil');
+

@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{ asset('css/swiper.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body>
-    <header>
-        @include('components.header')
-    </header>
     <div>
-        @include('components.navigation')
+        <x-app-logo/>
+        @include('layouts.navigation')
         <main>
             {{ $slot }}
         </main>
     </div>
     <footer class="bg-white mt-5">
-        @include('components.footer')
+        @include('layouts.footer')
     </footer>
-    @vite(['resources/js/app.js'])
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ asset('js/swiper.js') }}"></script>
 </body>
 </html>
