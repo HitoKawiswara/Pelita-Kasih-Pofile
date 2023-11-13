@@ -16,3 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('user.main');
 })->name('main');
+
+Route::get('/akademik', function() {
+    return view('user.akademik');
+})->name('akademik');
+
+Route::get('/data/guru', function() {
+    return view('user.data-guru');
+})->name('guru');
+
+Route::get('/data/staff', function() {
+    return view('user.data-staff');
+})->name('staff');
+
+Route::get('/ekstrakurikuler', function() {
+    return view('user.ekstrakurikuler');
+})->name('ekstra');
+
+Route::get('/fasilitas', function() {
+    return view('user.fasilitas');
+})->name('fasilitas');
+
