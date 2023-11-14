@@ -1,7 +1,7 @@
 <nav class="absolute end-0 z-50 my-3">
     <div class="flex justify-between h-28 w-full drop-shadow-md">
         {{-- navigation start --}}
-        <div class="bg-primary-500 flex gap-10  text-white items-center my-5 px-10 mx-8 rounded-full text-xl cursor-pointer">
+        <div class="bg-primary-500 flex gap-10  text-white items-center my-5 px-10 mx-8 rounded-xl text-xl cursor-pointer">
             <div class="">
                 <x-nav-link :href="route('main')" :active="request()->routeIs('main')">
                     {{ __('Beranda') }}

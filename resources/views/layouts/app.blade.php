@@ -22,6 +22,7 @@
         </main>
     </div>
     <footer class="bg-white mt-5">
+        {{-- <div class="w-screen h-2 bg-primary-500"></div> --}}
         @include('layouts.footer')
     </footer>
 

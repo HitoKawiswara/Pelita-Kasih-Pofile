@@ -63,7 +63,7 @@
 
     {{-- berita start --}}
     <div class="pt-10 pb-5">
-        <div class="flex gap-3 justify-center text-5xl mb-14">
+        <div class="flex gap-3 justify-center text-5xl mb-14 drop-shadow">
             <h1 class="text-primary-500 font-bold">Berita</h1>
             <h1 class="text-secondary-500 font-bold">Terkini</h1>
         </div>
