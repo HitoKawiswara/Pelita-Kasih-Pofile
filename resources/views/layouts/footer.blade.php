@@ -1,5 +1,5 @@
 <div class="flex">
-    <div class="mx-5 py-4">
+    <div class="px-5 py-4">
         <div class="flex items-center">
             <x-app-logo-sm></x-app-logo-sm>
             <h1 class="mx-3 font-bold text-xl">INFORMASI PENDAFTARAN</h1>

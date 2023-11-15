@@ -20,10 +20,10 @@
                         </button>
                     </x-slot>
                     <x-slot name="content" class="">
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('profil', ['scroll_to' => 'tentang-kami'])">
                             {{ __('Tentang Kami') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('profil', ['scroll_to' => 'visi-misi'])">
                             {{ __('Visi & Misi') }}
                         </x-dropdown-link>
                     </x-slot>
@@ -42,16 +42,16 @@
                         </button>
                     </x-slot>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'tk'])">
                             {{ __('Taman Kanak-Kanak') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'sd'])">
                             {{ __('Sekolah Dasar') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'smp'])">
                             {{ __('Sekolah Menengah Pertama') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'sma'])">
                             {{ __('Sekolah Menengah Atas') }}
                         </x-dropdown-link>
                     </x-slot>

@@ -1,11 +1,6 @@
-.swiper1 {
-  width: 100%;
-  height: 600px;
-}
-
-.swiper2 {
-  width: 100%;
-  height: 500px;
+.swiper1 > .swiper-slide {
+  display: flex;
+  justify-content: center;
 }
 
 .swiper2 > .swiper-wrapper {

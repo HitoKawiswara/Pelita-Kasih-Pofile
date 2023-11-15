@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('user.main');
 })->name('main');
 
+Route::get('/profil', function() {
+    return view('user.profil');
+})->name('profil');
+
+// blm selesai
+
 Route::get('/akademik', function() {
     return view('user.akademik');
 })->name('akademik');
@@ -37,7 +43,5 @@ Route::get('/fasilitas', function() {
     return view('user.fasilitas');
 })->name('fasilitas');
 
-Route::get('/profile', function() {
-    return view('user.profil');
-})->name('profil');
+
 

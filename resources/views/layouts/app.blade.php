@@ -13,7 +13,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
-<body>
+<body class="">
     <div>
         <x-app-logo/>
         @include('layouts.navigation')
@@ -21,12 +21,13 @@
             {{ $slot }}
         </main>
     </div>
-    <footer class="bg-white mt-5">
+    <footer class="bg-white">
         {{-- <div class="w-screen h-2 bg-primary-500"></div> --}}
         @include('layouts.footer')
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/swiper.js') }}"></script>
+    <script src="{{ asset('js/clickToScroll.js') }}"></script>
 </body>
 </html>
