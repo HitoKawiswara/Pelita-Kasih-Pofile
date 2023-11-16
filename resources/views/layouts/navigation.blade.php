@@ -1,7 +1,7 @@
-<nav class="absolute end-0 z-50 my-3">
-    <div class="flex justify-between h-28 w-full drop-shadow-md">
+<nav class="absolute end-0 z-50 my-3 ">
+    <div class="flex justify-between h-28 w-full drop-shadow-md ">
         {{-- navigation start --}}
-        <div class="bg-primary-500 flex gap-10  text-white items-center my-5 px-10 mx-8 rounded-xl text-xl cursor-pointer">
+        <div class="rounded-lg flex gap-10  text-white items-center my-5 px-10 mx-8 text-xl cursor-pointer ">
             <div class="">
                 <x-nav-link :href="route('main')" :active="request()->routeIs('main')">
                     {{ __('Beranda') }}
@@ -70,16 +70,16 @@
                         </button>
                     </x-slot>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('fasilitas', ['scroll_to' => 'lapangan'])">
                             {{ __('Lapangan Olahraga') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('fasilitas', ['scroll_to' => 'perpus'])">
                             {{ __('Perpustakaan') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('fasilitas', ['scroll_to' => 'lab'])">
                             {{ __('Laboratorium') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('fasilitas', ['scroll_to' => 'aula'])">
                             {{ __('Aula') }}
                         </x-dropdown-link>
                     </x-slot>
@@ -98,10 +98,10 @@
                         </button>
                     </x-slot>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('guru')">
                             {{ __('Data Guru') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('staff')">
                             {{ __('Data Staff') }}
                         </x-dropdown-link>
                     </x-slot>

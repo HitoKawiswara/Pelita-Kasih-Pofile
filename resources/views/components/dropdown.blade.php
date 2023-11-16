@@ -1,4 +1,4 @@
-@props(['active', 'align' => 'right', 'width' => '40', 'contentClasses' => 'py-1 bg-primary-500'])
+@props(['active', 'align' => 'right', 'width' => '40', 'contentClasses' => 'py-1 bg-white/10'])
 
 @php
 $classes = ($active ?? false)

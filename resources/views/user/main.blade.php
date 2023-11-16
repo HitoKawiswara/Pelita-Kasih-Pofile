@@ -3,13 +3,19 @@
     <div class="swiper swiper1">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <x-carousel-img :src="asset('storage/assets/Carousel1.png')" />
+                <x-title-image :src="asset('storage/assets/Carousel1.png')">
+                    {{ __('Example Slide 1') }}
+                 </x-title-image>
             </div>
             <div class="swiper-slide">
-                <x-carousel-img :src="asset('storage/assets/Carousel2.png')" />
+                <x-title-image :src="asset('storage/assets/Carousel1.png')">
+                    {{ __('Example Slide 2') }}
+                 </x-title-image>
             </div>
             <div class="swiper-slide">
-                <x-carousel-img :src="asset('storage/assets/Carousel3.png')" />
+                <x-title-image :src="asset('storage/assets/Carousel1.png')">
+                    {{ __('Example Slide 3') }}
+                 </x-title-image>
             </div>
         </div>
 
@@ -74,13 +80,116 @@
                 
                 {{-- slide start --}}
                 <div class="swiper-slide">
-                    <div class="max-w-sm rounded-lg overflow-hidden shadow-lg">
+                    <div class="max-w-sm rounded-lg overflow-hidden bg-white shadow-lg mb-5">
                         <img class="w-full" src="{{ asset('storage/assets/stock1.jpg') }}" alt="Sunset in the mountains">
                         <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                            <div class="font-bold text-xl mb-2">
+                                Lorem ipsum dolor sit amet.
+                            </div>
                             <p class="text-gray-700 text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
-                                Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur nulla modi eos asperiores adipisci sequi nisi numquam veniam autem pariatur quo deleniti, hic est dignissimos repudiandae itaque quam molestiae animi! Veritatis possimus eum, tenetur ratione quisquam, fugit doloribus a reiciendis voluptatibus et consequatur itaque consequuntur quam est necessitatibus expedita!
+                            </p>
+                        </div>
+                        <div class="px-6 pt-4 h-16">
+                            <a href="#" class="inline-block border-b-0
+                            text-md font-semibold text-gray-700 mr-2 hover:border-b-2 hover:text-gray-800 hover:border-gray-800 leading-5 transition-all ease-in-out duration-75 cursor-pointer">read more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="max-w-sm rounded-lg overflow-hidden bg-white shadow-lg mb-5">
+                        <img class="w-full" src="{{ asset('storage/assets/stock1.jpg') }}" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-700 text-base">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur nulla modi eos asperiores adipisci sequi nisi numquam veniam autem pariatur quo deleniti, hic est dignissimos repudiandae itaque quam molestiae animi! Veritatis possimus eum, tenetur ratione quisquam, fugit doloribus a reiciendis voluptatibus et consequatur itaque consequuntur quam est necessitatibus expedita!
+                            </p>
+                        </div>
+                        <div class="px-6 pt-4 h-16">
+                            <a href="#" class="inline-block border-b-0
+                            text-md font-semibold text-gray-700 mr-2 hover:border-b-2 hover:text-gray-800 hover:border-gray-800 leading-5 transition-all ease-in-out duration-75 cursor-pointer">read more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="max-w-sm rounded-lg overflow-hidden bg-white shadow-lg mb-5">
+                        <img class="w-full" src="{{ asset('storage/assets/stock1.jpg') }}" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-700 text-base">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur nulla modi eos asperiores adipisci sequi nisi numquam veniam autem pariatur quo deleniti, hic est dignissimos repudiandae itaque quam molestiae animi! Veritatis possimus eum, tenetur ratione quisquam, fugit doloribus a reiciendis voluptatibus et consequatur itaque consequuntur quam est necessitatibus expedita!
+                            </p>
+                        </div>
+                        <div class="px-6 pt-4 h-16">
+                            <a href="#" class="inline-block border-b-0
+                            text-md font-semibold text-gray-700 mr-2 hover:border-b-2 hover:text-gray-800 hover:border-gray-800 leading-5 transition-all ease-in-out duration-75 cursor-pointer">read more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="max-w-sm rounded-lg overflow-hidden bg-white shadow-lg mb-5">
+                        <img class="w-full" src="{{ asset('storage/assets/stock1.jpg') }}" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-700 text-base">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur nulla modi eos asperiores adipisci sequi nisi numquam veniam autem pariatur quo deleniti, hic est dignissimos repudiandae itaque quam molestiae animi! Veritatis possimus eum, tenetur ratione quisquam, fugit doloribus a reiciendis voluptatibus et consequatur itaque consequuntur quam est necessitatibus expedita!
+                            </p>
+                        </div>
+                        <div class="px-6 pt-4 h-16">
+                            <a href="#" class="inline-block border-b-0
+                            text-md font-semibold text-gray-700 mr-2 hover:border-b-2 hover:text-gray-800 hover:border-gray-800 leading-5 transition-all ease-in-out duration-75 cursor-pointer">read more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="max-w-sm rounded-lg overflow-hidden bg-white shadow-lg mb-5">
+                        <img class="w-full" src="{{ asset('storage/assets/stock1.jpg') }}" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-700 text-base">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur nulla modi eos asperiores adipisci sequi nisi numquam veniam autem pariatur quo deleniti, hic est dignissimos repudiandae itaque quam molestiae animi! Veritatis possimus eum, tenetur ratione quisquam, fugit doloribus a reiciendis voluptatibus et consequatur itaque consequuntur quam est necessitatibus expedita!
+                            </p>
+                        </div>
+                        <div class="px-6 pt-4 h-16">
+                            <a href="#" class="inline-block border-b-0
+                            text-md font-semibold text-gray-700 mr-2 hover:border-b-2 hover:text-gray-800 hover:border-gray-800 leading-5 transition-all ease-in-out duration-75 cursor-pointer">read more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="max-w-sm rounded-lg overflow-hidden bg-white shadow-lg mb-5">
+                        <img class="w-full" src="{{ asset('storage/assets/stock1.jpg') }}" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-700 text-base">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur nulla modi eos asperiores adipisci sequi nisi numquam veniam autem pariatur quo deleniti, hic est dignissimos repudiandae itaque quam molestiae animi! Veritatis possimus eum, tenetur ratione quisquam, fugit doloribus a reiciendis voluptatibus et consequatur itaque consequuntur quam est necessitatibus expedita!
+                            </p>
+                        </div>
+                        <div class="px-6 pt-4 h-16">
+                            <a href="#" class="inline-block border-b-0
+                            text-md font-semibold text-gray-700 mr-2 hover:border-b-2 hover:text-gray-800 hover:border-gray-800 leading-5 transition-all ease-in-out duration-75 cursor-pointer">read more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="max-w-sm rounded-lg overflow-hidden bg-white shadow-lg mb-5">
+                        <img class="w-full" src="{{ asset('storage/assets/stock1.jpg') }}" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-700 text-base">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur nulla modi eos asperiores adipisci sequi nisi numquam veniam autem pariatur quo deleniti, hic est dignissimos repudiandae itaque quam molestiae animi! Veritatis possimus eum, tenetur ratione quisquam, fugit doloribus a reiciendis voluptatibus et consequatur itaque consequuntur quam est necessitatibus expedita!
                             </p>
                         </div>
                         <div class="px-6 pt-4 h-16">

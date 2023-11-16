@@ -2,7 +2,7 @@
     <div class="px-5 py-4">
         <div class="flex items-center">
             <x-app-logo-sm></x-app-logo-sm>
-            <h1 class="mx-3 font-bold text-xl">INFORMASI PENDAFTARAN</h1>
+            <h1 class="mx-3 font-bold text-xl text-primary-500">INFORMASI PENDAFTARAN</h1>
         </div>
         <!--  -->
         <div class="flex mt-3 gap-5">

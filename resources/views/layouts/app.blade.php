@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="{{ asset('css/swiper.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/strukturSekolah.css') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
-<body class="">
+<body class="bg-zinc-100">
     <div>
         <x-app-logo/>
         @include('layouts.navigation')
@@ -21,8 +22,7 @@
             {{ $slot }}
         </main>
     </div>
-    <footer class="bg-white">
-        {{-- <div class="w-screen h-2 bg-primary-500"></div> --}}
+    <footer>
         @include('layouts.footer')
     </footer>
 

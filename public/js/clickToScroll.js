@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const scrollToSection = urlParams.get('scroll_to');
 
-    // Function to scroll to a section and remove the scroll_to parameter from the URL
     function scrollToAndRemoveURLParam(sectionId) {
         setTimeout(function() {
             const section = document.getElementById(sectionId);
@@ -12,9 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     block: 'center'
                 });
 
-                // Remove 'scroll_to' parameter from the URL
-                const newURL = window.location.href.split('?')[0]; // Remove existing query parameters
-                history.replaceState({}, document.title, newURL); // Replace URL without 'scroll_to' parameter
+                const newURL = window.location.href.split('?')[0]; 
+                history.replaceState({}, document.title, newURL); 
             }
         }, 500);
     }
@@ -37,6 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         case 'sma':
             scrollToAndRemoveURLParam('sma');
+            break;
+        case 'lapangan':
+            scrollToAndRemoveURLParam('lapangan');
+            break;
+        case 'perpus':
+            scrollToAndRemoveURLParam('perpus');
+            break;
+        case 'lab':
+            scrollToAndRemoveURLParam('lab');
+            break;
+        case 'aula':
+            scrollToAndRemoveURLParam('aula');
             break;
         default:
             break;
