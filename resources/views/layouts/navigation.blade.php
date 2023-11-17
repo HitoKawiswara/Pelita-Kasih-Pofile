@@ -120,16 +120,16 @@
                         </button>
                     </x-slot>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'basket'])">
                             {{ __('Basket') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'sepakbola'])">
                             {{ __('Sepak Bola') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'bulutangkis'])">
                             {{ __('Bulu Tangkis') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profil')">
+                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'voli'])">
                             {{ __('Voli') }}
                         </x-dropdown-link>
                     </x-slot>

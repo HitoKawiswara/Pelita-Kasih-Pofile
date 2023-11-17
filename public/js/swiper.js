@@ -3,12 +3,16 @@ const swiper1 = new Swiper(".swiper1", {
     direction: "horizontal",
     loop: true,
 
+    autoplay: {
+        delay: 2000,
+    },
+
     // pagination
     pagination: {
         el: ".swiper-pagination1",
         clickable: true,
         dynamicBullets: true,
-        dynamicMainBullets: 3,
+        dynamicMainBullets: 1,
     },
 
     // Navigation arrows
@@ -22,7 +26,7 @@ const swiper2 = new Swiper(".swiper2", {
     // Optional parameters
     direction: "horizontal",
     loop: true,
-    slidesPerView: 3,
+    slidesPerView: 4,
 
     // Navigation arrows
     navigation: {

@@ -5,7 +5,7 @@
     </x-title-image>
 
     {{-- about start --}}
-    <div class="mt-10" id="tentang-kami">
+    <div class=" mt-10" id="tentang-kami">
         <x-title-lg>
             Tentang
             <x-slot name="slot2">
@@ -25,7 +25,7 @@
 
     {{-- visi misi start --}}
     <div class="flex justify-around mt-20 mb-10 mx-20 gap-20" id="visi-misi">
-        <div class="bg-primary-500 rounded-xl py-10 px-16 max-w-lg shadow-lg">
+        <div class="bg-primary-500 rounded-lg py-10 px-16 max-w-lg shadow-lg">
             <h1 class="mb-10 text-center text-secondary-500 font-semibold text-4xl border-b-2 border-secondary-500 pb-5">
                 VISI
             </h1>
@@ -33,7 +33,7 @@
                 Terwujudnya siswa yang UNGGUL, SEHAT jasmani dan rohani, memiliki KARAKTER POSITIF, CITRA DIRI POSITIF, memiliki tujuan hidup yang jelas, memiliki STRATEGI DAN KOMITMEN dalam menggapai cita- citanya.
             </p>
         </div>
-        <div class="bg-primary-500 rounded-xl py-10 px-16 max-w-lg shadow-lg">
+        <div class="bg-primary-500 rounded-lg py-10 px-16 max-w-lg shadow-lg">
             <h1 class="mb-10 text-center text-secondary-500 font-semibold text-4xl border-b-2 border-secondary-500 pb-5">
                 MISI
             </h1>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/swiper.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/strukturSekolah.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/newsCard.css') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 

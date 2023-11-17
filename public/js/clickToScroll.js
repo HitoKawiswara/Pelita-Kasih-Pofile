@@ -48,6 +48,18 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'aula':
             scrollToAndRemoveURLParam('aula');
             break;
+        case 'basket':
+            scrollToAndRemoveURLParam('basket');
+            break;
+        case 'sepakbola':
+            scrollToAndRemoveURLParam('sepakbola');
+            break;
+        case 'bulutangkis':
+            scrollToAndRemoveURLParam('bulutangkis');
+            break;
+        case 'voli':
+            scrollToAndRemoveURLParam('voli');
+            break;
         default:
             break;
     }

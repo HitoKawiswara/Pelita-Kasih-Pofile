@@ -29,7 +29,6 @@ Route::get('/fasilitas', function() {
     return view('user.fasilitas');
 })->name('fasilitas');
 
-// blm selesai
 Route::get('/data/guru', function() {
     return view('user.data-guru');
 })->name('guru');
@@ -38,6 +37,7 @@ Route::get('/data/staff', function() {
     return view('user.data-staff');
 })->name('staff');
 
+// blm selesai
 Route::get('/ekstrakurikuler', function() {
     return view('user.ekstrakurikuler');
 })->name('ekstra');
