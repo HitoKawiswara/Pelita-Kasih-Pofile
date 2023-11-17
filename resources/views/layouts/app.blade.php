@@ -15,7 +15,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
-<body class="bg-zinc-100">
+{{-- bg-zinc-100 --}}
+<body class="bg-black">
     <div>
         <x-app-logo/>
         @include('layouts.navigation')

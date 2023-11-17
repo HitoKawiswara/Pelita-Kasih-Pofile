@@ -1,7 +1,6 @@
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
 .snip1369 {
-    font-family: "Raleway", Arial, sans-serif;
     position: relative;
     overflow: hidden;
     margin: 10px;
@@ -58,7 +57,6 @@
     bottom: 46px;
     left: 20px;
     right: 20px;
-    border-bottom: 2px solid #ffffff;
     padding-top: 20px;
     z-index: 1;
 }
@@ -68,6 +66,7 @@
 }
 .snip1369 h3 {
     font-weight: 700;
+    font-size: 1.2em;
     margin-bottom: 5px;
     text-transform: uppercase;
 }

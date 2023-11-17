@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.main');
-})->name('main');
+Route::get('/', [MainPageController::class, 'index'])->name('main');
+
+Route::get('/data/guru', [TeacherController::class, 'index'])->name('guru');
 
 Route::get('/profil', function() {
     return view('user.profil');
@@ -28,10 +30,6 @@ Route::get('/akademik', function() {
 Route::get('/fasilitas', function() {
     return view('user.fasilitas');
 })->name('fasilitas');
-
-Route::get('/data/guru', function() {
-    return view('user.data-guru');
-})->name('guru');
 
 Route::get('/data/staff', function() {
     return view('user.data-staff');

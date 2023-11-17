@@ -1,11 +1,13 @@
+@props(['src'])
+
 <div class="swiper-slide">
-    <figure class="snip1369">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample15.jpg" alt="pr-sample15" />
-        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample15.jpg"
-                alt="pr-sample15" /></div>
+    <figure class="snip1369 rounded-lg">
+        <img src ="{{ asset( 'storage/images/berita/' . $src ) }}"/>
+        <div class="image"><img src="{{ asset( 'storage/images/berita/' . $src ) }}"
+                alt="image" /></div>
         <figcaption>
             <h3>{{ $header }}</h3>
-            <p>{{ $desc }}</p>
+            <p class="text-justify leading-5">{{ strlen($content) > 120 ? substr($content, 0, 120) . '...' : $content }}</p>
         </figcaption><span class="read-more">
 
             <a href="#" class="hover:border-b-2 transition-none">

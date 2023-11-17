@@ -22,16 +22,6 @@
                     </x-slot>
                  </x-title-with-subtitle-image>
             </div>
-            <div class="swiper-slide">
-                <x-title-with-subtitle-image :src="asset('storage/assets/Carousel1.png')">
-                    <x-slot name="header">
-                        {{ __('Example Slide 1') }}
-                    </x-slot>
-                    <x-slot name="desc">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium voluptatem repellendus ipsa illo quibusdam, eaque ullam alias sint sunt atque perferendis, rem culpa. Qui explicabo, magnam, molestiae sapiente, at quas omnis fugiat placeat pariatur vel eos? Pariatur molestias vel sint dolores, enim soluta placeat cumque doloremque est. Sapiente, voluptates numquam! Itaque culpa deserunt sapiente aspernatur vero nisi ut amet voluptatem reiciendis qui, ipsam ullam incidunt esse. Ipsa commodi sequi fugiat earum, architecto minima exercitationem animi blanditiis ducimus velit doloremque tempore facilis eum quos vero eius, illum ut iste cumque. Nisi exercitationem vel assumenda quam? Voluptatum numquam adipisci blanditiis et dolorum?
-                    </x-slot>
-                 </x-title-with-subtitle-image>
-            </div>
         </div>
 
         <!-- pagination -->
@@ -94,46 +84,16 @@
             <div class="swiper-wrapper">
                 
                 {{-- slide start --}}
-                    <x-news-card>
-                        <x-slot name="header">
-                            Example
-                        </x-slot>
-                        <x-slot name="desc">
-                            None
-                        </x-slot>
-                    </x-news-card>
-                    <x-news-card>
-                        <x-slot name="header">
-                            Example
-                        </x-slot>
-                        <x-slot name="desc">
-                            None
-                        </x-slot>
-                    </x-news-card>
-                    <x-news-card>
-                        <x-slot name="header">
-                            Example
-                        </x-slot>
-                        <x-slot name="desc">
-                            None
-                        </x-slot>
-                    </x-news-card>
-                    <x-news-card>
-                        <x-slot name="header">
-                            Example
-                        </x-slot>
-                        <x-slot name="desc">
-                            None
-                        </x-slot>
-                    </x-news-card>
-                    <x-news-card>
-                        <x-slot name="header">
-                            Example
-                        </x-slot>
-                        <x-slot name="desc">
-                            None
-                        </x-slot>
-                    </x-news-card>
+                @foreach ($newsList as $news)
+                <x-news-card :src="$news['img']" alt="pr-sample15">
+                    <x-slot name="header">
+                        {{ $news['title'] }}
+                    </x-slot>
+                    <x-slot name="content">
+                       {{ $news['content'] }}
+                    </x-slot>
+                </x-news-card>
+                @endforeach
                 {{-- slide end --}}
     
             </div>
