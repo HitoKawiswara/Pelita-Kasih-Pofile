@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teachers', function (Blueprint $table) {
+        Schema::create('structures', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
+            $table->string('img')->default('guru-staff-profile-example.png');
             $table->string('name', 60);
-            $table->string('work_as', 60);
+            $table->enum('work_as', ['guru', 'staff', 'kepala sekolah', 'wakil kepala sekolah']);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teachers');
+        Schema::dropIfExists('structures');
     }
 };

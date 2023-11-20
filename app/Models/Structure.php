@@ -6,10 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Teachers extends Model
+class Structure extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    
+    protected $fillable = [
+        'name',
+        'img',
+        'work_as'
+    ];
+
+    protected $date = [
+        'deleted_at'
+    ];
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
+            $table->string('img')->default('berita-example.png');
             $table->string('title', 60);
             $table->longText('content')->nullable(true);
             $table->timestamp('will_delete')->nullable(true);

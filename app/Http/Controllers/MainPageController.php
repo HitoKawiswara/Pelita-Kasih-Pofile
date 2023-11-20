@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class MainPageController extends Controller
 {
-    function index() {
+    protected function index() {
         $newsList = News::all();
 
         return view('user.main', compact('newsList'));
+
     }
 }

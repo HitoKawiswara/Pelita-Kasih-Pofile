@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{ asset('css/swiper.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/strukturSekolah.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/newsCard.css') }}">
 
     <title>Admin-{{ config('app.name', 'Laravel') }}</title>
 </head>
@@ -16,5 +19,9 @@
         {{ $slot }}
     </main>
     @vite(['resources/js/app.js'])
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ asset('js/swiper.js') }}"></script>
+    <script src="{{ asset('js/clickToScroll.js') }}"></script>
 </body>
 </html>

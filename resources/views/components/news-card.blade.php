@@ -1,8 +1,8 @@
 @props(['src'])
 
 <div class="swiper-slide">
-    <figure class="snip1369 rounded-lg">
-        <img src ="{{ asset( 'storage/images/berita/' . $src ) }}"/>
+    <figure class="snip1369 rounded-lg shadow-lg m-5">
+        <img src ="{{ asset( 'storage/images/berita/' . $src ) }}" alt="news-cover"/>
         <div class="image"><img src="{{ asset( 'storage/images/berita/' . $src ) }}"
                 alt="image" /></div>
         <figcaption>

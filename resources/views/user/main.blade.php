@@ -85,7 +85,7 @@
                 
                 {{-- slide start --}}
                 @foreach ($newsList as $news)
-                <x-news-card :src="$news['img']" alt="pr-sample15">
+                <x-news-card :src="$news['img']" alt="news-cover">
                     <x-slot name="header">
                         {{ $news['title'] }}
                     </x-slot>

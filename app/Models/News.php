@@ -12,7 +12,9 @@ class News extends Model
     use SoftDeletes;
 
     protected $fillable = [
-
+        'img',
+        'title',
+        'content'
     ];
 
     protected $date = [
