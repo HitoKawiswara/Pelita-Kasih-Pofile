@@ -7,5 +7,5 @@
     <p class="mt-10 w-2/3 text-white text-lg text-center z-10">
         {{ $desc }}
     </p>
-    <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+    <div class="absolute inset-0 bg-black opacity-30 z-0"></div>
 </div>

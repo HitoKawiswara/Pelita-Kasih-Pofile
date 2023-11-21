@@ -24,17 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'visi-misi':
             scrollToAndRemoveURLParam('visi-misi');
             break;
-        case 'tk':
-            scrollToAndRemoveURLParam('tk');
+        case 'tk-akademik':
+            scrollToAndRemoveURLParam('tk-akademik');
             break;
-        case 'sd':
-            scrollToAndRemoveURLParam('sd');
+        case 'sd-akademik':
+            scrollToAndRemoveURLParam('sd-akademik');
             break;
-        case 'smp':
-            scrollToAndRemoveURLParam('smp');
+        case 'smp-akademik':
+            scrollToAndRemoveURLParam('smp-akademik');
             break;
-        case 'sma':
-            scrollToAndRemoveURLParam('sma');
+        case 'sma-akademik':
+            scrollToAndRemoveURLParam('sma-akademik');
             break;
         case 'lapangan':
             scrollToAndRemoveURLParam('lapangan');
@@ -59,6 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         case 'voli':
             scrollToAndRemoveURLParam('voli');
+            break;
+        case 'tk-struktur':
+            scrollToAndRemoveURLParam('tk-struktur');
+            break;
+        case 'sd-struktur':
+            scrollToAndRemoveURLParam('sd-struktur');
+            break;
+        case 'smp-struktur':
+            scrollToAndRemoveURLParam('smp-struktur');
+            break;
+        case 'sma-struktur':
+            scrollToAndRemoveURLParam('sma-struktur');
             break;
         default:
             break;

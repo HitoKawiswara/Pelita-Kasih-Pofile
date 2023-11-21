@@ -4,5 +4,5 @@
     <h1 class="text-white font-bold text-6xl relative z-10">
         {{ $slot }}
     </h1>
-    <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+    <div class="absolute inset-0 bg-black opacity-30 z-0"></div>
 </div>

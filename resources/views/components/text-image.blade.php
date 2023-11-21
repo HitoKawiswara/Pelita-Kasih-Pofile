@@ -4,5 +4,5 @@
     <p class="text-white font-base text-lg text-justify mx-64 z-10">
         {{ $slot }}
     </p>
-    <div class="absolute inset-0 bg-black opacity-30 z-0"></div>
+    {{-- <div class="absolute inset-0 bg-black opacity-30 z-0"></div> --}}
 </div>

@@ -1,4 +1,4 @@
-<div class="flex gap-3 justify-center text-4xl mb-10 drop-shadow">
-    <h1 class="text-primary-500 font-semibold">{{ $slot }}</h1>
-    <h1 class="text-secondary-500 font-semibold">{{ $slot2 }}</h1>
+<div class="flex gap-3 justify-center font-bold text-5xl mb-10 drop-shadow-md">
+    <h1 class="text-primary-500">{{ $slot }}</h1>
+    <h1 class="text-secondary-500">{{ $slot2 }}</h1>
 </div>

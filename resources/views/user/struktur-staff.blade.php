@@ -15,7 +15,15 @@
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer px-3">{{ ucwords(strtolower($row['name'])) }}</li>
-                                    <li class="text-xl text-gray-500 cursor-pointer">{{ ucfirst($row['work_as']) }}</li>
+                                    <li class="text-xl text-gray-500 cursor-pointer">
+                                    @php
+                                    if (isset($row['job_desc']) && !empty($row['job_desc'])) {
+                                        echo ucfirst($row['job_desc']);
+                                    } else {
+                                        echo ucfirst($row['work_as']);
+                                    }
+                                    @endphp
+                                    </li>
                                 </ul>
                             </div>
                             <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-10 pointer-events-none">

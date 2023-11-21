@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Structure>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class StructureFactory extends Factory
 {
@@ -16,11 +16,11 @@ class StructureFactory extends Factory
      */
     public function definition(): array
     {
-
         return [
             'name' => fake()->name(),
-            'work_as' => fake()->randomElement(['guru', 'staff'])
+            'work_as' => fake()->randomElement(['guru', 'staff']),
+            'job_desc' => fake()->text(10),
+            'category' => fake()->randomElement(['tk', 'sd', 'smp', 'sma'])
         ];
-
     }
 }

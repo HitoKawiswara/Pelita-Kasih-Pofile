@@ -42,16 +42,16 @@
                         </button>
                     </x-slot>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'tk'])">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'tk-akademik'])">
                             {{ __('Taman Kanak-Kanak') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'sd'])">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'sd-akademik'])">
                             {{ __('Sekolah Dasar') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'smp'])">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'smp-akademik'])">
                             {{ __('Sekolah Menengah Pertama') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'sma'])">
+                        <x-dropdown-link :href="route('akademik', ['scroll_to' => 'sma-akademik'])">
                             {{ __('Sekolah Menengah Atas') }}
                         </x-dropdown-link>
                     </x-slot>
@@ -98,11 +98,20 @@
                         </button>
                     </x-slot>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('guru')">
-                            {{ __('Data Guru') }}
+                        <x-dropdown-link :href="route('guru', ['scroll_to' => 'tk-struktur'])">
+                            {{ __('Taman Kanak-Kanak') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('guru', ['scroll_to' => 'sd-struktur'])">
+                            {{ __('Sekolah Dasar') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('guru', ['scroll_to' => 'smp-struktur'])">
+                            {{ __('Sekolah Menengah Pertama') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('guru', ['scroll_to' => 'sma-struktur'])">
+                            {{ __('Sekolah Menegah Atas') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('staff')">
-                            {{ __('Data Staff') }}
+                            {{ __('Staff') }}
                         </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>

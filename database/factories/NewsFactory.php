@@ -19,7 +19,8 @@ class NewsFactory extends Factory
         
         return [
             'title' => fake()->text(60),
-            'content' => fake()->paragraph()
+            'content' => fake()->paragraph(),
+            'will_delete_at' => fake()->numberBetween(1, 365)
         ];
     }
 }

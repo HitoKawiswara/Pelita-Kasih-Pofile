@@ -17,10 +17,10 @@
 </head>
 
 <body class="antialiased bg-zinc-100">
-    <div>
+    <div id="top">
         <x-app-logo/>
         @include('layouts.navigation')
-        <main>
+        <main class="relative">
             {{ $slot }}
         </main>
     </div>

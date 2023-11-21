@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('img')->default('berita-example.png');
             $table->string('title', 60);
             $table->longText('content')->nullable(true);
-            $table->timestamp('will_delete')->nullable(true);
+            $table->smallInteger('will_delete_at')->default(10);
             $table->timestamps();
             $table->softDeletes();
         });

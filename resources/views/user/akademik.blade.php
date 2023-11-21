@@ -4,7 +4,7 @@
     </x-title-image>
 
     {{-- tk start --}}
-    <div id="tk" class="mt-10 mx-auto">
+    <div id="tk-akademik" class="mt-10 mx-auto">
         <x-title-lg>
             {{ __('Taman Kanak-Kanak') }}
             <x-slot name="slot2"></x-slot>
@@ -41,7 +41,7 @@
     {{-- tk end --}}
 
     {{-- sd start --}}
-    <div id="sd" class="mt-10 mx-auto bg-primary-500 py-10 text-white">
+    <div id="sd-akademik" class="mt-10 mx-auto bg-primary-500 py-10 text-white">
         <x-title-lg>
             {{ __('') }}
             <x-slot name="slot2">
@@ -81,7 +81,7 @@
     {{-- sd end --}}
 
     {{-- smp start --}}
-    <div id="smp" class="mt-10 mx-auto">
+    <div id="smp-akademik" class="mt-10 mx-auto">
         <x-title-lg>
             {{ __('Sekolah Menengah Pertama') }}
             <x-slot name="slot2"></x-slot>
@@ -119,7 +119,7 @@
     {{-- smp end --}}
 
     {{-- sma start --}}
-    <div id="sma" class="mt-10 mx-auto bg-primary-500 py-10 text-white">
+    <div id="sma-akademik" class="mt-10 mx-auto bg-primary-500 py-10 text-white">
         <x-title-lg>
             {{ __('') }}
             <x-slot name="slot2">

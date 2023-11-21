@@ -14,7 +14,8 @@ class News extends Model
     protected $fillable = [
         'img',
         'title',
-        'content'
+        'content',
+        'will_delete_at'
     ];
 
     protected $date = [

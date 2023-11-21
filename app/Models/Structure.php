@@ -12,9 +12,7 @@ class Structure extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name',
-        'img',
-        'work_as'
+        'img', 'name', 'work_as', 'job_desc', 'category'
     ];
 
     protected $date = [

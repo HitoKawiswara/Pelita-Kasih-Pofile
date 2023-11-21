@@ -73,7 +73,7 @@
     <!-- Service End -->
 
     {{-- berita start --}}
-    <div class="py-10">
+    <div class="py-10" data-aos="fade-right">
         <x-title-lg>
             Berita
             <x-slot name="slot2">
