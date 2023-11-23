@@ -12,9 +12,17 @@
                 Kami
             </x-slot>
         </x-title-lg>
-        <x-text-image :src="asset('storage/assets/bg-banner1.png')">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, placeat. Dolore non optio numquam sed veritatis qui! Earum nostrum error tempora. Quas delectus est sunt alias illo ipsum, fugiat corrupti, deserunt explicabo, modi deleniti ad natus error aspernatur optio earum eum a dolor impedit at doloremque maiores? Autem accusamus nesciunt nihil dolores minima vel eligendi vitae ipsa? Dolorem sit nisi debitis quaerat rem, voluptate eaque exercitationem voluptas impedit nulla, quo pariatur, ullam itaque eos. Quisquam autem nam et quae harum labore, dolores quidem nisi commodi magni eum dolorum voluptatum iste ipsa deserunt culpa, pariatur illum quia. Vitae, quasi voluptates! Labore blanditiis impedit quos tenetur modi. Natus, rem? Fugit laborum veritatis corrupti ipsa animi impedit nam tenetur nostrum repellendus enim nemo accusantium, et voluptatibus labore atque libero reprehenderit cupiditate cumque. Rerum nobis inventore nam quos libero ut quis magnam similique voluptas? Perspiciatis libero dolores soluta doloribus quis eveniet eaque fuga iusto, repudiandae unde deserunt exercitationem neque autem, mollitia sed commodi explicabo rem quisquam illo consectetur. Excepturi labore sint sit animi officiis nisi laboriosam! Quam cupiditate minus aliquam aliquid officiis est sunt ab dolorem nemo, assumenda deserunt, ex quibusdam, non modi provident suscipit? Ipsa magnam illo, a, optio perspiciatis vel tempore excepturi, nulla eligendi quidem maxime mollitia? Veniam illo porro delectus odit alias et voluptatem sequi culpa ex saepe facilis voluptas tempore ipsam, architecto officiis autem eos perferendis tenetur sint eius ea provident ipsa aliquid! Doloremque, eius atque nobis amet facere sunt facilis eos provident a pariatur ad similique minima, nulla autem!
-        </x-text-image>
+        <div class="flex  items-center justify-around relative bg-secondary-500">
+            <div class="text-white font-base text-lg text-justify mr-24 ml-52">
+                <p class="mb-5">
+                    Sekolah Pelita Kasih merupakan sekolah yang pembelajarannya menggunakan kurikulum nasional dan menerapkan nilai-nilai Kristiani. Kami percaya bahwa setiap individu adalah unik dan istimewa dengan kemampuan untuk mengembangkan potensi yang dimikilinya dan menjadi yang terbaik.
+                </p>
+                <p>
+                    Sistem pendidikan, staff pengajar yang profesional dan berdedikasi serta lingkungan sekolah yang mengayomi dapat mendukung dan menumbuhkan potensi terbaik setiap individu untuk menjadi seseorang unggul, berpengetahuan, percaya kepada Tuhan, sehat jasmani, memiliki karakter positif, citra diri positif, memiliki tujuan hidup yang jelas, memiliki strategi dan komitmen serta keahlian untuk menjalani kehidupan dan menggapai cita- citanya.
+                </p>
+            </div>
+            <img src="{{ asset('storage/assets/Carousel1.png') }}" alt="image" class=" max-h-80 aspect-video object-cover rounded-[20%/50%] rounded-r-none shadow-lg">
+        </div>
     </div>
     {{-- about end --}}
 
