@@ -3,63 +3,54 @@
         {{ __('EKSTRAKURIKULER') }}
     </x-title-image>
 
-    {{-- basket start --}}
-    <div class="py-10" id="basket">
-        <x-title-lg>
-            {{ __('Basket') }}
-            <x-slot name='slot2'></x-slot>
-        </x-title-lg>
-        <div class="flex justify-between items-center px-32 gap-10">
-            <p class="text-justify text-lg leading-6 tracking-wide">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non maiores voluptates exercitationem repellat placeat est vitae, voluptatibus fugit asperiores pariatur dolore sunt neque deleniti officiis corporis aliquam voluptatem eaque nam praesentium cumque inventore aspernatur iure consequatur! Commodi mollitia maiores debitis, velit, fugiat quis optio ipsa quia dignissimos porro nam at?
-            </p>
-            <img class=" aspect-video h-72 rounded-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
-        </div>
-    </div>
-    {{-- basket end --}}
-    
-    {{-- sepak bola start --}}
-    <div class="py-10 bg-primary-500" id="sepakbola">
-        <x-title-lg>
-            {{ __('') }}
-            <x-slot name='slot2'>{{ __('Sepak Bola') }}</x-slot>
-        </x-title-lg>
-        <div class="flex justify-between items-center px-32 gap-10 text-white">
-            <p class="text-justify text-lg leading-6 tracking-wide">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non maiores voluptates exercitationem repellat placeat est vitae, voluptatibus fugit asperiores pariatur dolore sunt neque deleniti officiis corporis aliquam voluptatem eaque nam praesentium cumque inventore aspernatur iure consequatur! Commodi mollitia maiores debitis, velit, fugiat quis optio ipsa quia dignissimos porro nam at?
-            </p>
-            <img class=" aspect-video h-72 rounded-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
-        </div>
-    </div>
-    {{-- sepak bola end --}}
-    
-    {{-- bulu tangkis start --}}
-    <div class="py-10" id="bulutangkis">
-        <x-title-lg>
-            {{ __('Bulu Tangkis') }}
-            <x-slot name='slot2'></x-slot>
-        </x-title-lg>
-        <div class="flex justify-between items-center px-32 gap-10">
-            <p class="text-justify text-lg leading-6 tracking-wide">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non maiores voluptates exercitationem repellat placeat est vitae, voluptatibus fugit asperiores pariatur dolore sunt neque deleniti officiis corporis aliquam voluptatem eaque nam praesentium cumque inventore aspernatur iure consequatur! Commodi mollitia maiores debitis, velit, fugiat quis optio ipsa quia dignissimos porro nam at?
-            </p>
-            <img class=" aspect-video h-72 rounded-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
-        </div>
-    </div>
-    {{-- bulu tangkis end --}}
+    {{-- Loop Start --}}
+    @foreach ($ekskul as $kelari)
+        <div class="py-10 @if($loop->iteration % 2 == 0) bg-primary-500 text-white @endif"
+             id="{{ strtolower($kelari->nama) }}">
+            @if($loop->iteration % 2 == 0)
+                <x-title-lg>
+                    {{ '' }}
+                    <x-slot name='slot2'>{{ $kelari->nama }}</x-slot>
+                </x-title-lg>
+            @else
+                <x-title-lg>
+                    {{ $kelari->nama }}
+                    <x-slot name='slot2'></x-slot>
+                </x-title-lg>
+            @endif
 
-    {{-- voli start --}}
-    <div class="py-10 bg-primary-500" id="voli">
-        <x-title-lg>
-            {{ __('') }}
-            <x-slot name='slot2'>{{ __('Voli') }}</x-slot>
-        </x-title-lg>
-        <div class="flex justify-between items-center px-32 gap-10 text-white">
-            <p class="text-justify text-lg leading-6 tracking-wide">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non maiores voluptates exercitationem repellat placeat est vitae, voluptatibus fugit asperiores pariatur dolore sunt neque deleniti officiis corporis aliquam voluptatem eaque nam praesentium cumque inventore aspernatur iure consequatur! Commodi mollitia maiores debitis, velit, fugiat quis optio ipsa quia dignissimos porro nam at?
-            </p>
-            <img class=" aspect-video h-72 rounded-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
+            <div class="flex justify-between items-center px-32 gap-10 @if($loop->iteration % 2 == 0) text-white @endif">
+                <p class="text-justify text-lg leading-6 tracking-wide">
+                    {{ $kelari->description }}
+                </p>
+                <div class="mt-4">
+                    {{-- Check if image_path is set --}}
+                    @if(isset($kelari->image_path) && is_array($kelari->image_path) && count($kelari->image_path) > 0)
+                        {{-- Create an image slider using the Carousel component --}}
+                        <div id="carousel-{{ $loop->index }}" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                @foreach ($kelari->image_path as $index => $image)
+                                    <div class="carousel-item @if($index === 0) active @endif">
+                                        <img class="d-block w-100 aspect-video h-72 rounded-lg" src="{{ asset('storage/' . $image) }}" alt="">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel-{{ $loop->index }}" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-{{ $loop->index }}" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    @else
+                        {{-- Display a default image or placeholder --}}
+                        <img class="aspect-video h-72 rounded-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
+                    @endif
+                </div>
+            </div>
         </div>
-    </div>
-    {{-- voli end --}}
+    @endforeach
+    {{-- Loop End --}}
 </x-app-layout>
