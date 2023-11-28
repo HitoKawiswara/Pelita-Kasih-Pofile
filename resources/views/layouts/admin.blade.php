@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="{{ asset('css/strukturSekolah.css') }}">
     <link rel="stylesheet" href="{{ asset('css/newsCard.css') }}">
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <title>Admin-{{ config('app.name', 'Laravel') }}</title>
 </head>
-<body>
+<body class="antialiased bg-zinc-100">
     <main>
         {{ $slot }}
     </main>
-    @vite(['resources/js/app.js'])
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/swiper.js') }}"></script>

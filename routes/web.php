@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StructureController;
+use App\Http\Middleware\AdminAuth;
+use App\View\Components\AdminLayout;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainPageController::class, 'index'])->name('main');
 
-Route::controller(StructureController::class)->group(function () {
-    Route::get('/struktur/guru', 'index')->name('guru');
-    Route::get('/struktur/staff', 'index')->name('staff');
-});
-
 Route::get('/profil', function() {
     return view('user.profil');
 })->name('profil');
@@ -34,16 +33,27 @@ Route::get('/fasilitas', function() {
     return view('user.fasilitas');
 })->name('fasilitas');
 
-// blm selesai
+Route::controller(StructureController::class)->group(function () {
+    Route::get('/struktur/guru', 'index')->name('guru');
+    Route::get('/struktur/staff', 'index')->name('staff');
+});
+
 Route::get('/ekstrakurikuler', function() {
     return view('user.ekstrakurikuler');
 })->name('ekstra');
 
-Route::get('/admin/login', function() {
-    return view('admin.admin-login');
-})->name('adminLogin');
 
+//breeze
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
+require __DIR__.'/auth.php';
 
 

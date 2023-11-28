@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\News;
 use App\Models\Structure;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
 
         Structure::factory(50)->create();
         News::factory(20)->create();
-
+        User::factory(1)->create();
+        
     }
 }
