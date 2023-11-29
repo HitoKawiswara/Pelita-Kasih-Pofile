@@ -3,6 +3,7 @@
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StructureController;
+use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Middleware\AdminAuth;
 use App\View\Components\AdminLayout;
 use Illuminate\Support\Facades\Route;
@@ -46,9 +47,10 @@ Route::controller(StructureController::class)->group(function () {
     Route::get('/struktur/staff', 'index')->name('staff');
 });
 
-Route::get('/ekstrakurikuler', function() {
-    return view('user.ekstrakurikuler');
-})->name('ekstra');
+Route::get('/ekstrakurikuler', [EkstrakurikulerController::class, 'index'])->name('ekstra');
+Route::get('/ekstrakurikuler/create', [EkstrakurikulerController::class, 'create']);
+Route::post('/ekstrakurikuler', [EkstrakurikulerController::class, 'store']);
+
 
 
 //breeze

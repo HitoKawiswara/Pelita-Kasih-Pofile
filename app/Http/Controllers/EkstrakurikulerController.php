@@ -10,7 +10,6 @@ class EkstrakurikulerController extends Controller
     public function index()
     {
         $ekskul = ekstrakurikuler::all();
-        dd($ekskul);
         return view('user.ekstrakurikuler', compact('ekskul'));
     }
     public function create()
