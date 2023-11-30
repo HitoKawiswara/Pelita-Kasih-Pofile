@@ -9,7 +9,6 @@ use App\Http\Middleware\AdminAuth;
 use App\View\Components\AdminLayout;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +41,6 @@ Route::get('/fasilitas', function() {
 Route::get('/ekstrakurikuler', function() {
     return view('user.ekstrakurikuler');
 })->name('ekstra');
-
 
 //admin
 Route::controller(AdminPageController::class)->group(function() {
