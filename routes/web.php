@@ -5,6 +5,8 @@ use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\EkstrakurikulerController;
+use App\Http\Controllers\UserPageController;
+
 use App\Http\Middleware\AdminAuth;
 use App\View\Components\AdminLayout;
 use Illuminate\Support\Facades\Route;
