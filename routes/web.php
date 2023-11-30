@@ -4,19 +4,10 @@ use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StructureController;
+use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Middleware\AdminAuth;
 use App\View\Components\AdminLayout;
 use Illuminate\Support\Facades\Route;
-
-
-// Admin Page //
-use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\AkademikController;
-use App\Http\Controllers\StrukturController;
-use App\Http\Controllers\UpdatepwController;
-use App\Http\Controllers\UserPageController;
 
 /*
 |--------------------------------------------------------------------------
