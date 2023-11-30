@@ -6,13 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ekstrakurikuler extends Model
+class Ekskul extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'ekstrakurikuler';
-    protected $fillable = ['nama', 'description', 'image_path'];
-
-    protected $casts = [
-        'image_path' => 'json',
-    ];
+    protected $fillable = ['nama', 'description', 'img_path'];
 }

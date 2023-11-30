@@ -1,23 +1,35 @@
-<nav x-data="{ open: false }" class="bg-primary-500 border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-primary-500">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="px-4 py-2 sm:px-6 lg:px-8">
         <div class="flex justify-between h-28">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-app-logo-sm/>
-                    </a>
-                    <h1 class="text-white mx-3 font-semibold text-3xl">Dashboard</h1>
+                    <x-app-logo-sm/>
+                    <h1 class="text-white mx-3 font-semibold text-3xl">Pelita Kasih</h1>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <div class="sm:flex gap-10 hidden mr-5">
+                    <x-nav-link :href="route('adminBerita')" :active="request()->routeIs('adminBerita')" class="text-white text-xl font-normal">
+                        {{ __('Berita Terkini') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('adminAkademik')" :active="request()->routeIs('adminAkademik')" class="text-white text-xl font-normal">
+                        {{ __('Akademik') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('adminStruktur')" :active="request()->routeIs('adminStruktur')" class="text-white text-xl font-normal">
+                        {{ __('Struktur Sekolah') }}
+                    </x-nav-link>
+                </div>
                 <x-dropdown align="right" width="48" contentClasses="bg-primary-500 overflow-hidden" class="border-none">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:text-gray-500 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ ucwords(Auth::user()->name) }}</div>
+                            <div><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                              </svg></div>
 
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -70,6 +82,16 @@
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')" class="text-white">
                     {{ __('Profile') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('adminBerita')" :active="request()->routeIs('adminBerita')" class="text-white">
+                    {{ __('Berita Terkini') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('adminAkademik')" :active="request()->routeIs('adminAkademik')" class="text-white">
+                    {{ __('Akademik') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('adminStruktur')" :active="request()->routeIs('adminStruktur')" class="text-white">
+                    {{ __('Struktur Sekolah') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

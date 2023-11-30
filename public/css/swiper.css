@@ -32,6 +32,11 @@
   transform: scale(1);
 }
 
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  border-radius: 0.5rem;
+}
+
 .swiper-pagination {
   --swiper-pagination-color: black;
   --swiper-pagination-left: auto;

@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('img')->default('berita-example.png');
+            $table->string('thumbnail')->default('berita-example.png');
+            $table->string('img1')->default('berita-example.png');
+            $table->string('img2')->default('berita-example.png');
             $table->string('title', 60);
             $table->longText('content')->nullable(true);
-            $table->smallInteger('will_delete_at')->default(10);
+            $table->smallInteger('duration')->default(10);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -17,6 +17,7 @@
     <title>Admin-{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body class="antialiased bg-zinc-100">
+    @include('layouts.admin-nav')
     <main>
         {{ $slot }}
     </main>

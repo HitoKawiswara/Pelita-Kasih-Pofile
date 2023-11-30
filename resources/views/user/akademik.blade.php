@@ -9,27 +9,22 @@
             {{ __('Taman Kanak-Kanak') }}
             <x-slot name="slot2"></x-slot>
         </x-title-lg>
-        <div class="swiper swiper1 w-[50%] h-[10%] object-cover rounded-lg">
+        <div class="swiper swiper3 w-[80%] py-10">
             <div class="swiper-wrapper">
                 {{-- slide start --}}
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
+                @foreach ( $images as $row )
+                    @if ( $row->type == 'tk')
+                        <div class="swiper-slide">
+                            <img src="{{ asset('storage/images/akademik/tk/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                        </div>
+                    @endif
+                @endforeach
                 {{-- slide end --}}
             </div>
             
             <!-- navigation buttons -->
-            <div class="swiper-button-prev swiper-button-prev1"></div>
-            <div class="swiper-button-next swiper-button-next1"></div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
+            <div class="swiper-button-next swiper-button-next3"></div>
         </div>
         <div class="flex flex-col gap-5 my-5">
             <p class="w-[50%] mx-auto text-justify tracking-wide leading-6 font-medium text-lg">
@@ -48,27 +43,22 @@
                 Sekolah Dasar
             </x-slot>
         </x-title-lg>
-        <div class="swiper swiper1 w-[50%] h-[10%] object-cover rounded-lg">
+        <div class="swiper swiper3 w-[80%] py-10">
             <div class="swiper-wrapper">
                 {{-- slide start --}}
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
+                @foreach ( $images as $row )
+                    @if ( $row->type == 'sd')
+                        <div class="swiper-slide">
+                            <img src="{{ asset('storage/images/akademik/sd/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                        </div>
+                    @endif
+                @endforeach
                 {{-- slide end --}}
             </div>
             
             <!-- navigation buttons -->
-            <div class="swiper-button-prev swiper-button-prev1"></div>
-            <div class="swiper-button-next swiper-button-next1"></div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
+            <div class="swiper-button-next swiper-button-next3"></div>
         </div>
         <div class="flex flex-col gap-5 my-5">
             <p class="w-[50%] mx-auto text-justify tracking-wide leading-6 font-medium text-lg">
@@ -86,27 +76,22 @@
             {{ __('Sekolah Menengah Pertama') }}
             <x-slot name="slot2"></x-slot>
         </x-title-lg>
-        <div class="swiper swiper1 w-[50%] h-[10%] object-cover rounded-lg">
+        <div class="swiper swiper3 w-[80%] py-10">
             <div class="swiper-wrapper">
                 {{-- slide start --}}
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
+                @foreach ( $images as $row )
+                    @if ( $row->type == 'smp')
+                        <div class="swiper-slide">
+                            <img src="{{ asset('storage/images/akademik/smp/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                        </div>
+                    @endif
+                @endforeach
                 {{-- slide end --}}
             </div>
             
             <!-- navigation buttons -->
-            <div class="swiper-button-prev swiper-button-prev1"></div>
-            <div class="swiper-button-next swiper-button-next1"></div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
+            <div class="swiper-button-next swiper-button-next3"></div>
         </div>
         <div class="flex flex-col gap-5 my-5">
             <p class="w-[50%] mx-auto text-justify tracking-wide leading-6 font-medium text-lg">
@@ -126,27 +111,22 @@
                 Sekolah Menengah Akhir
             </x-slot>
         </x-title-lg>
-        <div class="swiper swiper1 w-[50%] h-[10%] object-cover rounded-lg">
+        <div class="swiper swiper3 w-[80%] py-10">
             <div class="swiper-wrapper">
                 {{-- slide start --}}
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('storage/assets/Carousel2.png') }}" alt="">
-                </div>
+                @foreach ( $images as $row )
+                    @if ( $row->type == 'sma')
+                        <div class="swiper-slide">
+                            <img src="{{ asset('storage/images/akademik/sma/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                        </div>
+                    @endif
+                @endforeach
                 {{-- slide end --}}
             </div>
             
             <!-- navigation buttons -->
-            <div class="swiper-button-prev swiper-button-prev1"></div>
-            <div class="swiper-button-next swiper-button-next1"></div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
+            <div class="swiper-button-next swiper-button-next3"></div>
         </div>
         <div class="flex flex-col gap-5 my-5">
             <p class="w-[50%] mx-auto text-justify tracking-wide leading-6 font-medium text-lg">

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('job_desc', 30)->nullable(true);
             $table->enum('category', ['tk', 'sd', 'smp', 'sma']);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

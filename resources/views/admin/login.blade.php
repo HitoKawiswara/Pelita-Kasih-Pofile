@@ -1,4 +1,4 @@
-<x-admin-layout>
+<x-admin-guest-layout>
     <div class="flex items-center justify-center flex-col h-screen">
         <form action="{{ route('login') }}" method="POST">
             @csrf
@@ -14,7 +14,8 @@
                 </label>
                 <input
                     class="appearance-none border rounded-md w-full py-3 px-3 leading-tight border-gray-400 focus:outline-none focus:border-primary-500 shadow-md"
-                    id="email" name="email" type="email" autocomplete="off" value="{{ old('email') }}" autofocus required/>
+                    id="email" name="email" type="email" autocomplete="off" value="{{ old('email') }}" autofocus
+                    required />
 
                 <!-- Password -->
                 <label class="font-medium block mb-1 mt-6 text-gray-700" for="password">
@@ -22,7 +23,7 @@
                 </label>
                 <div class="relative w-full">
                     <div class="absolute inset-y-0 right-0 flex items-center px-2">
-                        <input class="hidden js-password-toggle" id="toggle" type="checkbox"/>
+                        <input class="hidden js-password-toggle" id="toggle" type="checkbox" />
                         <label
                             class=" rounded-md px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer js-password-label"
                             for="toggle">
@@ -37,8 +38,9 @@
                             </svg>
                         </label>
                     </div>
-                    <input class="appearance-none border rounded-md w-full py-3 px-3 leading-tight border-gray-400 focus:outline-none focus:border-primary-500 text-gray-700 pr-16 font-mono js-password shadow-md"
-                        id="password" name="password" type="password" autocomplete="off" required/>
+                    <input
+                        class="appearance-none border rounded-md w-full py-3 px-3 leading-tight border-gray-400 focus:outline-none focus:border-primary-500 text-gray-700 pr-16 font-mono js-password shadow-md"
+                        id="password" name="password" type="password" autocomplete="off" required />
                 </div>
                 <a href="#"
                     class="mb-10 mt-5 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm font-semibold text-center hover:text-secondary-500 transition-all text-gray-700">Forgot
@@ -50,5 +52,4 @@
             </div>
         </form>
     </div>
-    <script src="{{ asset('js/togglePassVis.js') }} " />
-</x-admin-layout>
+</x-admin-guest-layout>

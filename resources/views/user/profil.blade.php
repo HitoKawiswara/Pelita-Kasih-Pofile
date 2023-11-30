@@ -13,7 +13,7 @@
             </x-slot>
         </x-title-lg>
         <div class="flex  items-center justify-around relative bg-secondary-500">
-            <div class="text-white font-base text-lg text-justify mr-24 ml-52">
+            <div class="font-base text-lg text-justify mr-24 ml-52">
                 <p class="mb-5">
                     Sekolah Pelita Kasih merupakan sekolah yang pembelajarannya menggunakan kurikulum nasional dan menerapkan nilai-nilai Kristiani. Kami percaya bahwa setiap individu adalah unik dan istimewa dengan kemampuan untuk mengembangkan potensi yang dimikilinya dan menjadi yang terbaik.
                 </p>
@@ -27,24 +27,24 @@
     {{-- about end --}}
 
     {{-- visi misi start --}}
-    <div class="flex justify-around mt-20 mb-10 mx-20 gap-20" id="visi-misi">
-        <div class="bg-primary-500 rounded-lg py-10 px-16 max-w-lg shadow-lg">
+    <div class=" bg-primary-500 py-20 mt-20" id="visi-misi">
+        <div class="container mx-auto">
             <h1 class="mb-10 text-center text-secondary-500 font-semibold text-4xl border-b-2 border-secondary-500 pb-5">
                 VISI
             </h1>
-            <p class="text-white text-justify tracking-normal text-xl">
+            <p class="text-white text-center tracking-normal text-xl">
                 Terwujudnya siswa yang UNGGUL, SEHAT jasmani dan rohani, memiliki KARAKTER POSITIF, CITRA DIRI POSITIF, memiliki tujuan hidup yang jelas, memiliki STRATEGI DAN KOMITMEN dalam menggapai cita- citanya.
             </p>
         </div>
-        <div class="bg-primary-500 rounded-lg py-10 px-16 max-w-lg shadow-lg">
+        <div class="mt-20 container mx-auto">
             <h1 class="mb-10 text-center text-secondary-500 font-semibold text-4xl border-b-2 border-secondary-500 pb-5">
                 MISI
             </h1>
-            <ul class="text-white text-justify tracking-normal text-xl list-disc space-y-3">
-                <li>Menanamkan pendidikan berkarakter.</li>
-                <li>Membimbing peserta didik yang selalu optimis, percaya diri, berpikiran positif, mengetahui kelebihan pada dirinya yang bermanfaat untuk orang lain dan mempunyai gambaran yang jelas tentang masa depannya.</li>
-                <li>Membina peserta didik yang bertumbuh menjadi siswa yang sehat, berbudi pekerti luhur dan bertanggung jawab sesuai nilai kebenaran.</li>
-                <li>Memperlengkapi peserta didik dengan keterampilan yang berkualitas sesuai kebutuhan dan untuk pengembangan dirinya.</li>                
+            <ul class="text-white tracking-normal text-xl list-disc space-y-3 text-center mx-auto list-none">
+                <li class="py-2">Menanamkan pendidikan berkarakter.</li>
+                <li class="py-2">Membimbing peserta didik yang selalu optimis, percaya diri, berpikiran positif, mengetahui kelebihan pada dirinya yang bermanfaat untuk orang lain dan mempunyai gambaran yang jelas tentang masa depannya.</li>
+                <li class="py-2">Membina peserta didik yang bertumbuh menjadi siswa yang sehat, berbudi pekerti luhur dan bertanggung jawab sesuai nilai kebenaran.</li>
+                <li class="py-2">Memperlengkapi peserta didik dengan keterampilan yang berkualitas sesuai kebutuhan dan untuk pengembangan dirinya.</li>                
             </ul>
         </div>
     </div>

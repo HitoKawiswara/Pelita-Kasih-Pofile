@@ -20,8 +20,8 @@
                     @if ($row['work_as'] == 'kepala sekolah' && $row['category'] == 'tk')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -36,8 +36,8 @@
                     @elseif ($row['work_as'] == 'wakil kepala sekolah' && $row['category'] == 'tk')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -66,8 +66,8 @@
                             <div class="my-card-container relative overflow-hidden">
                                 <div class="image-overlay"></div>
                                 <div
-                                    class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                    <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt="image"
+                                    class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                    <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt="image"
                                         class="max-h-60 w-full object-cover">
                                     <ul class="text-center my-5">
                                         <li class="text-2xl leading-10 font-semibold cursor-pointer px-3">
@@ -110,8 +110,8 @@
                     @if ($row['work_as'] == 'kepala sekolah' && $row['category'] == 'sd')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -126,8 +126,8 @@
                     @elseif ($row['work_as'] == 'wakil kepala sekolah' && $row['category'] == 'sd')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -156,8 +156,8 @@
                             <div class="my-card-container relative overflow-hidden">
                                 <div class="image-overlay"></div>
                                 <div
-                                    class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                    <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt="image"
+                                    class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                    <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt="image"
                                         class="max-h-60 w-full object-cover">
                                     <ul class="text-center my-5">
                                         <li class="text-2xl leading-10 font-semibold cursor-pointer px-3">
@@ -200,8 +200,8 @@
                     @if ($row['work_as'] == 'kepala sekolah' && $row['category'] == 'smp')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -216,8 +216,8 @@
                     @elseif ($row['work_as'] == 'wakil kepala sekolah' && $row['category'] == 'smp')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -246,8 +246,8 @@
                             <div class="my-card-container relative overflow-hidden">
                                 <div class="image-overlay"></div>
                                 <div
-                                    class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                    <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt="image"
+                                    class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                    <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt="image"
                                         class="max-h-60 w-full object-cover">
                                     <ul class="text-center my-5">
                                         <li class="text-2xl leading-10 font-semibold cursor-pointer px-3">
@@ -290,8 +290,8 @@
                     @if ($row['work_as'] == 'kepala sekolah' && $row['category'] == 'sma')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -306,8 +306,8 @@
                     @elseif ($row['work_as'] == 'wakil kepala sekolah' && $row['category'] == 'sma')
                         <div class="my-card-container relative overflow-hidden">
                             <div class="image-overlay"></div>
-                            <div class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt=""
+                            <div class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt=""
                                     class="max-h-60 w-full object-cover">
                                 <ul class="text-center my-5">
                                     <li class="text-2xl leading-10 font-semibold cursor-pointer">
@@ -336,8 +336,8 @@
                             <div class="my-card-container relative overflow-hidden">
                                 <div class="image-overlay"></div>
                                 <div
-                                    class="w-64 rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
-                                    <img src="{{ asset('storage/images/guru/' . $row['img']) }}" alt="image"
+                                    class="w-64 min-h-[388px] rounded-lg bg-white shadow-lg my-10 mx-5 md:mx-2 overflow-hidden my-card">
+                                    <img src="{{ asset('storage/images/struktur/' . $row['img']) }}" alt="image"
                                         class="max-h-60 w-full object-cover">
                                     <ul class="text-center my-5">
                                         <li class="text-2xl leading-10 font-semibold cursor-pointer px-3">

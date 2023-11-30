@@ -1,191 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-admin-layout>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <h2 class="text-2xl font-semibold mb-4">Tambah Berita Terkini</h2>
+                    {{-- form start --}}
+                    @if (session('success'))
+                        <div class="bg-green-200 text-green-700 border border-green-600 px-4 py-2 rounded-md mb-4">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <p></p>
+                    <form action="{{ route('adminBerita') }}" method="POST" enctype="multipart/form-data"
+                        class="w-full p-4" onsubmit="handleFormSubmit(event)">
+                        @csrf
+                        <div class="mb-4">
+                            <label for="thumbnail" class="block font-semibold mb-1">Thumbnail</label>
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" required
+                                class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="img1" class="block font-semibold mb-1">Gambar 1</label>
+                            <input type="file" name="img1" id="img1" accept="image/*" required
+                                class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="img2" class="block font-semibold mb-1">Gambar 2</label>
+                            <input type="file" name="img2" id="img2" accept="image/*" required
+                                class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="title" class="block font-semibold mb-1">Judul Berita</label>
+                            <input type="text" name="title" id="title" required
+                                class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="content" class="block font-semibold mb-1">Isi Berita</label>
+                            <textarea name="content" id="content" rows="10" required
+                                class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="duration" class="block font-semibold mb-1">Durasi (Hari)</label>
+                            <input type="number" name="duration" id="duration" required
+                                class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
+                        </div>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
+                        <button type="submit"
+                            class="w-full py-2 px-4 bg-secondary-500 text-white font-semibold rounded-md hover:bg-secondary-600 focus:outline-none focus:bg-secondary-600 ">Tambah Berita</button>
+                    </form>
 
-<body>
+                    {{-- form end --}}
 
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        @vite('resources/css/app.css')
-    </head>
-
-    <body>
-        <header class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-300 relative">
-            <div class="flex flex-col md:flex-row items-center">
-                <img src="{{ URL('images/admin/logo.png') }}" class="w-32 md:w-64 lg:w-48" alt="Logo">
-                <div class="md:ml-4 mt-4 md:mt-0"></div>
-            </div>
-            <nav class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 relative">
-                <a class="text-sm md:text-base lg:text-base xl:text-base text-gray-600 hover:text-gray-800 transition duration-300"
-                    href="{{ route('berita.index') }}">Berita</a>
-                <a class="text-sm md:text-base lg:text-base xl:text-base text-gray-600 hover:text-gray-800 transition duration-300"
-                    href="{{ route('akademik.index') }}">Akademik</a>
-                <a class="text-sm md:text-base lg:text-base xl:text-base text-gray-600 hover:text-gray-800 transition duration-300"
-                    href="{{ route('struktursekolah.index') }}">Struktur
-                    Sekolah</a>
-                <div class="relative">
-                    <img src="{{ URL('images/admin/profile.png') }}"
-                        class="w-16 md:w-32 lg:w-24 rounded-full cursor-pointer" alt="Profile Image" id="profileImage">
-
-                    <!-- Dropdown Content -->
-                    <div class="hidden absolute right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-md py-2">
-                        <a href="{{ route('updatepw.index') }}"
-                            class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Update Password</a>
-                    </div>
-                </div>
-            </nav>
-
-            <script>
-                document.getElementById('profileImage').addEventListener('click', function () {
-                    var dropdown = document.querySelector('.relative .hidden');
-                    dropdown.classList.toggle('hidden');
-                });
-            </script>
-
-        </header>
-
-
-
-
-        <form action="{{ route('berita.index') }}" class="flex flex-col items-center justify-center mt-10">
-            <div
-                class="flex flex-col items-center bg-white w-48 md:w-64 lg:w-96 p-5 shadow-md border border-gray-800 mt-2 mb-10">
-                <h1 class="mt-1 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm">Berita Baru</h1>
-                <input type="textarea"
-                    class="w-32 md:w-54 lg:w-80 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2 text-sm sm:text-base"
-                    placeholder="Masukkan Judul Berita" id="judul" name="judul" autocomplete="off" required>
-                <input type="textarea"
-                    class="w-32 md:w-54 lg:w-80 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2 text-sm sm:text-base"
-                    placeholder="Masukkan Tanggal Berita" id="tanggal" name="tanggal" autocomplete="off" required>
-                <input type="textarea"
-                    class="w-32 md:w-54 lg:w-80 h-4 md:h-12 lg:h-20 mt-4 shadow-md border border-gray-800 p-2 text-sm sm:text-base"
-                    placeholder="Masukkan Caption Berita" id="caption" name="caption" autocomplete="off" required>
-                <input type="textarea"
-                    class="w-32 md:w-54 lg:w-80 h-8 md:h-24 lg:h-40 mt-4 shadow-md border border-gray-800 p-2 text-sm sm:text-base"
-                    placeholder="Masukkan Isi Berita" id="isi" name="isi" autocomplete="off" required>
-                <button type="file"
-                    class="bg-gray-300 w-32 md:w-54 lg:w-80 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md  p-2 text-sm sm:text-base">Upload
-                    Foto</button>
-                <button type="submit"
-                    class="w-32 md:w-54 lg:w-80 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2 bg-indigo-700 text-white text-sm sm:text-base"
-                    value="submit">Submit</button>
-            </div>
-        </form>
-
-        <div
-            class="base:flex-col xs:flex-col md:flex-col lg:flex-row sm:flex-col flex flex-col items-center justify-center mt-10 space-x-4 mr-5 ml-5">
-
-            <!-- Berita 1-->
-            <div
-                class="flex flex-row items-center bg-white w-48 md:w-64 lg:w-96  p-5 shadow-md border border-gray-800 mt-2 mb-10 space-x-4">
-                <div class="flex flex-col mt-10">
-                    <div class="items-center justify-center">
-                        <img src="{{ URL('images/admin/berita1.png') }}" class="object-cover object-center w-64 h-64"
-                            alt="Logo">
-                        <h1 class="mt-5"><b>Tim Voli SMAK Pelita Kasih Meraih Medali Emas Pada Asian Games 2024</b></h1>
-                    </div>
-
-                    <div class=" items-left justify-left mt-10">
-                        <p class="text-orange-500"><b>20-10-2023</b></p>
-                        <p class="mt-10 mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-                            eleifend sit amet enim at fringilla. Etiam consectetur libero ut ante porta suscipit gravida
-                            luctus massa. Maecenas ornare tristique libero ut convallis. Vivamus suscipit, sem eget
-                            porta varius, purus orci ultrices ex, ac mattis risus mauris vitae massa. Integer vehicula
-                            pretium diam, sed finibus lorem lacinia non. Praesent id malesuada nisi. Etiam vehicula nunc
-                            vitae accumsan dignissim. Maecenas enim nisl, dictum id ornare et, aliquet eget elit. Mauris
-                            ac diam blandit, imperdiet est vel, aliquet risus. Integer commodo sodales sapien a pretium.
-                            Suspendisse a lectus augue. Morbi lorem ligula, pellentesque ut dapibus vitae, semper ac
-                            tellus.</p>
-                    </div>
-
-                    <div class="flex flex-row space-x-4">
-                        <button type="update"
-                            class="bg-red-600 w-16 md:w-27 lg:w-40 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2  text-white text-sm sm:text-base"
-                            value="update">Update</button>
-                        <button type="delete"
-                            class="bg-yellow-500 w-16 md:w-27 lg:w-40 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2  text-white text-sm sm:text-base"
-                            value="delete">Delete</button>
-                    </div>
                 </div>
             </div>
-
-            <!-- Berita 2-->
-            <div
-                class="flex flex-row items-center bg-white w-48 md:w-64 lg:w-96  p-5 shadow-md border border-gray-800 mt-2 mb-10 space-x-4">
-                <div class="flex flex-col mt-10">
-                    <div class=" items-center justify-center">
-                        <img src="{{ URL('images/admin/berita1.png') }}" class="object-cover object-center w-64 h-64"
-                            alt="Logo">
-                        <h1 class="mt-5"><b>Tim Voli SMAK Pelita Kasih Meraih Medali Emas Pada Asian Games 2024</b></h1>
-                    </div>
-
-                    <div class=" items-left justify-left mt-10">
-                        <p class="text-orange-500"><b>20-10-2023</b></p>
-                        <p class="mt-10 mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-                            eleifend sit amet enim at fringilla. Etiam consectetur libero ut ante porta suscipit gravida
-                            luctus massa. Maecenas ornare tristique libero ut convallis. Vivamus suscipit, sem eget
-                            porta varius, purus orci ultrices ex, ac mattis risus mauris vitae massa. Integer vehicula
-                            pretium diam, sed finibus lorem lacinia non. Praesent id malesuada nisi. Etiam vehicula nunc
-                            vitae accumsan dignissim. Maecenas enim nisl, dictum id ornare et, aliquet eget elit. Mauris
-                            ac diam blandit, imperdiet est vel, aliquet risus. Integer commodo sodales sapien a pretium.
-                            Suspendisse a lectus augue. Morbi lorem ligula, pellentesque ut dapibus vitae, semper ac
-                            tellus.</p>
-                    </div>
-
-                    <div class="flex flex-row space-x-4">
-                        <button type="update"
-                            class="bg-red-600 w-16 md:w-27 lg:w-40 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2  text-white text-sm sm:text-base"
-                            value="update">Update</button>
-                        <button type="delete"
-                            class="bg-yellow-500 w-16 md:w-27 lg:w-40 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2  text-white text-sm sm:text-base"
-                            value="delete">Delete</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Berita 3-->
-            <div
-                class="flex flex-row items-center bg-white w-48 md:w-64 lg:w-96  p-5 shadow-md border border-gray-800 mt-2 mb-10 space-x-4">
-                <div class="flex flex-col mt-10">
-                    <div class=" items-center justify-center">
-                        <img src="{{ URL('images/admin/berita1.png') }}" class="object-cover object-center w-64 h-64"
-                            alt="Logo">
-                        <h1 class="mt-5"><b>Tim Voli SMAK Pelita Kasih Meraih Medali Emas Pada Asian Games 2024</b></h1>
-                    </div>
-
-                    <div class=" items-left justify-left mt-10">
-                        <p class="text-orange-500"><b>20-10-2023</b></p>
-                        <p class="mt-10 mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-                            eleifend sit amet enim at fringilla. Etiam consectetur libero ut ante porta suscipit gravida
-                            luctus massa. Maecenas ornare tristique libero ut convallis. Vivamus suscipit, sem eget
-                            porta varius, purus orci ultrices ex, ac mattis risus mauris vitae massa. Integer vehicula
-                            pretium diam, sed finibus lorem lacinia non. Praesent id malesuada nisi. Etiam vehicula nunc
-                            vitae accumsan dignissim. Maecenas enim nisl, dictum id ornare et, aliquet eget elit. Mauris
-                            ac diam blandit, imperdiet est vel, aliquet risus. Integer commodo sodales sapien a pretium.
-                            Suspendisse a lectus augue. Morbi lorem ligula, pellentesque ut dapibus vitae, semper ac
-                            tellus.</p>
-                    </div>
-
-                    <div class="flex flex-row space-x-4">
-                        <button type="update"
-                            class="bg-red-600 w-16 md:w-27 lg:w-40 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2  text-white text-sm sm:text-base"
-                            value="update">Update</button>
-                        <button type="delete"
-                            class="bg-yellow-500 w-16 md:w-27 lg:w-40 h-1.8 md:h-5.3 lg:h-8.3 mt-4 shadow-md border border-gray-800 p-2  text-white text-sm sm:text-base"
-                            value="delete">Delete</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
+    </div>
+    <div class="pb-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    @foreach ($news as $item)
+                        <div class="bg-white overflow-hidden shadow-lg sm:rounded-md mb-10 overflow-x-auto relative">
+                            <div class="flex gap-3">
+                                <img src="{{ asset('storage/images/berita/' . $item->thumbnail) }}" alt="Thumbnail"
+                                    class="w-64 aspect-square object-cover">
+                                <img src="{{ asset('storage/images/berita/' . $item->img1) }}" alt="img1"
+                                    class="w-64 aspect-square object-cover">
+                                <img src="{{ asset('storage/images/berita/' . $item->img2) }}" alt="img2"
+                                    class="w-64 aspect-square object-cover">
+                                <div class="min-w-[364px]">
+                                    @if ($item->trashed())
+                                        <p class="text-red-600 text-lg font-semibold absolute bottom-3">Deleted</p>
+                                    @else
+                                        <p class="font-semibold absolute bottom-5">Akan terhapus pada:
+                                            {{ \Carbon\Carbon::parse($item->updated_at)->addDays($item->duration)->format('Y-m-d') }}
+                                        </p>
+                                    @endif
+                                    <div class="max-h-56 overflow-y-auto mb-10">
+                                        <h3 class="text-3xl font-semibold py-2">{{ ucwords($item->title) }}</h3>
+                                        <p>{{ $item->content }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                @if ($item->trashed())
+                                    <form action="{{ route('restore_news', $item->id) }}" method="POST"
+                                        class="my-3 mx-3" onsubmit="handleFormSubmit(event)">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit"
+                                            class="py-2 px-4 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Restore</button>
+                                    </form>
+                                    <form action="{{ route('force_delete_news', $item->id) }}" method="POST"
+                                        class="my-3 mx-3" onsubmit="handleFormSubmit(event)">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            class="py-2 px-4 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">Force
+                                            Delete</button>
+                                    </form>
+                                @else
+                                    <form action="{{ route('soft_delete_news', $item->id) }}" method="POST"
+                                        class="my-3 mx-3" onsubmit="handleFormSubmit(event)">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            class="py-2 px-4 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">Delete</button>
+                                    </form>
+                                @endif
+                                <button
+                                    onclick="editNews('{{ $item->id }}', '{{ $item->title }}', '{{ $item->content }}', '{{ $item->duration }}')"
+                                    class="my-3 mx-3 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Edit</button>
+                            </div>
+                        </div>
+                        {{-- edit modal start --}}
+                        <div id="editModal"
+                            class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
+                            <div class="bg-white rounded-md p-6 w-96 md:w-3/5 lg:w-2/3">
+                                <h2 class="text-2xl font-semibold mb-4">Edit Berita</h2>
+                                <form id="editForm">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" id="itemId" />
+                                    <div class="mb-4">
+                                        <label for="editTitle" class="block text-sm font-medium text-gray-700">Judul
+                                            Berita</label>
+                                        <input type="text" id="editTitle"
+                                            class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500" />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="editContent" class="block text-sm font-medium text-gray-700">Isi
+                                            Berita</label>
+                                        <textarea rows="10" id="editContent"
+                                            class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500"></textarea>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="editDuration"
+                                            class="block text-sm font-medium text-gray-700">Durasi (hari):</label>
+                                        <input type="number" id="editDuration"
+                                            class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500" />
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <button type="button" onclick="saveEdit()"
+                                            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 mr-2">Save</button>
+                                        <button type="button" onclick="closeModal()"
+                                            class="py-2 px-4 bg-gray-500 text-white font-semibold rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {{-- edit modal end --}}
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </body>
+    <script>
+        function editNews(id, title, content, duration) {
+            document.getElementById('itemId').value = id;
+            document.getElementById('editTitle').value = title;
+            document.getElementById('editContent').value = content;
+            document.getElementById('editDuration').value = duration;
 
-</html>
+            document.getElementById('editModal').classList.remove('hidden');
+        }
+
+        function saveEdit() {
+            const itemId = document.getElementById('itemId').value;
+            const title = document.getElementById('editTitle').value;
+            const content = document.getElementById('editContent').value;
+            const duration = document.getElementById('editDuration').value;
+
+            fetch(`/admin/berita/update/${itemId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        title: title,
+                        content: content,
+                        duration: duration
+                    })
+                })
+                .then(() => {
+                    closeModal();
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error occurred while updating.');
+                });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const url = form.getAttribute('action');
+            const method = form.getAttribute('method');
+
+            fetch(url, {
+                    method: method,
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    }
+                })
+                .then(() => {
+                    location.reload()
+                })
+        }
+
+        function closeModal() {
+            document.getElementById('editModal').classList.add('hidden');
+        }
+    </script>
+
+</x-admin-layout>

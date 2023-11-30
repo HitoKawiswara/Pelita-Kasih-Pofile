@@ -36,7 +36,7 @@
     <!-- Service Start -->
     <div class="flex py-10 justify-center gap-20 bg-primary-500">
         <div
-            class="px-5 py-14 w-60 text-xl text-white text-center rounded-lg bg-primary-500 hover:text-primary-500 hover:bg-white hover:scale-110   transition-all  ease-in-out duration-300 cursor-pointer">
+            class="px-5 py-14 w-60 text-xl text-white text-center rounded-lg bg-primary-500 hover:text-primary-500 hover:bg-white hover:scale-110   transition-all  ease-in-out duration-300 cursor-default">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-book h-16 mx-auto mb-5"
                 viewBox="0 0 16 16">
                 <path
@@ -46,7 +46,7 @@
             <p class="font-light">Terakreditasi Unggul</p>
         </div>
         <div
-            class="px-5 py-14 w-60 text-xl text-center rounded-lg bg-primary-500 text-white hover:text-primary-500 hover:bg-white transition-all  ease-in-out duration-300 hover:scale-110 cursor-pointer">
+            class="px-5 py-14 w-60 text-xl text-center rounded-lg bg-primary-500 text-white hover:text-primary-500 hover:bg-white transition-all  ease-in-out duration-300 hover:scale-110 cursor-default">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 class="bi bi-building-fill-check h-16 mx-auto mb-5" viewBox="0 0 16 16">
                 <path
@@ -58,7 +58,7 @@
             <p class="font-light">Fasilitas yang Memadai</p>
         </div>
         <div
-            class="px-5 py-14 w-60 text-xl text-center rounded-lg bg-primary-500 text-white hover:text-primary-500 hover:bg-white transition-all  ease-in-out duration-300 hover:scale-110 cursor-pointer">
+            class="px-5 py-14 w-60 text-xl text-center rounded-lg bg-primary-500 text-white hover:text-primary-500 hover:bg-white transition-all  ease-in-out duration-300 hover:scale-110 cursor-default">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-mortarboard-fill h-16 mx-auto mb-5"
                 viewBox="0 0 16 16">
                 <path
@@ -85,12 +85,12 @@
                 
                 {{-- slide start --}}
                 @foreach ($newsList as $news)
-                <x-news-card :src="$news['img']" alt="news-cover">
+                <x-news-card :src="$news->thumbnail" alt="news-cover">
                     <x-slot name="header">
-                        {{ $news['title'] }}
+                        {{ $news->title }}
                     </x-slot>
                     <x-slot name="content">
-                       {{ $news['content'] }}
+                       {{ $news->content }}
                     </x-slot>
                 </x-news-card>
                 @endforeach

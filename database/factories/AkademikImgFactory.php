@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\News>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AkademikImg>
  */
-class NewsFactory extends Factory
+class AkademikImgFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,11 +16,9 @@ class NewsFactory extends Factory
      */
     public function definition(): array
     {
-        
         return [
-            'title' => fake()->text(60),
-            'content' => fake()->paragraph(),
-            'duration' => fake()->numberBetween(1, 365)
+            'img' => 'Carousel1.png',
+            'type' => fake()->randomElement(['tk', 'sd', 'smp', 'sma']),
         ];
     }
 }
