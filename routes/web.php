@@ -4,19 +4,11 @@ use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StructureController;
+use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Middleware\AdminAuth;
 use App\View\Components\AdminLayout;
 use Illuminate\Support\Facades\Route;
 
-
-// Admin Page //
-use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\AkademikController;
-use App\Http\Controllers\StrukturController;
-use App\Http\Controllers\UpdatepwController;
-use App\Http\Controllers\UserPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +35,6 @@ Route::get('/profil', function() {
     return view('user.profil');
 })->name('profil');
 
-
 Route::get('/fasilitas', function() {
     return view('user.fasilitas');
 })->name('fasilitas');
@@ -51,6 +42,7 @@ Route::get('/fasilitas', function() {
 Route::get('/ekstrakurikuler', function() {
     return view('user.ekstrakurikuler');
 })->name('ekstra');
+
 
 //admin
 Route::controller(AdminPageController::class)->group(function() {
@@ -66,12 +58,14 @@ Route::controller(AdminPageController::class)->group(function() {
     Route::delete('/admin/berita/del/{id}', 'soft_delete_news')->name('soft_delete_news');
     Route::delete('/admin/berita/force-del/{id}', 'force_delete_news')->name('force_delete_news');
 
+
     //akademik
     Route::get('/admin/akademik', 'show_akademik')->middleware(['auth', 'verified'])->name('adminAkademik');
 
     Route::post('/admin/akademik', 'store_akademik')->name('store_akademik');
 
     Route::delete('/admin/akademik/delete/{id}', 'delete_akademik')->name('delete_akademik');
+
 
     //structure
     Route::get('/admin/struktur', 'show_structure')->middleware(['auth', 'verified'])->name('adminStruktur');
