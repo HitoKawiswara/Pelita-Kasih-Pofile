@@ -2,7 +2,7 @@
     <div class="flex justify-between h-28 w-full drop-shadow-md ">
         {{-- navigation start --}}
         <div class="rounded-lg flex gap-10  text-white items-center my-5 px-10 mx-8 text-xl cursor-pointer ">
-            <div class="">
+            <div>
                 <x-nav-link :href="route('main')" :active="request()->routeIs('main')">
                     {{ __('Beranda') }}
                 </x-nav-link>
@@ -119,30 +119,11 @@
 
             {{-- ekstra --}}
             <div>
-                <x-dropdown :active="request()->routeIs('ekstra')">
-                    <x-slot name="trigger">
+                <div>
+                    <x-nav-link :href="route('ekstra')" :active="request()->routeIs('ekstra')">
                         {{ __('Ekstrakurikuler') }}
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                              </svg>
-                        </button>
-                    </x-slot>
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'basket'])">
-                            {{ __('Basket') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'sepakbola'])">
-                            {{ __('Sepak Bola') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'bulutangkis'])">
-                            {{ __('Bulu Tangkis') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('ekstra', ['scroll_to' => 'voli'])">
-                            {{ __('Voli') }}
-                        </x-dropdown-link>
-                    </x-slot>
-                </x-dropdown>
+                    </x-nav-link>
+                </div>
             </div>
 
         </div>

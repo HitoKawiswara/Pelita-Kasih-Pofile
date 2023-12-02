@@ -1,12 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminPageController;
-use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\StructureController;
-use App\Http\Controllers\EkstrakurikulerController;
-use App\Http\Middleware\AdminAuth;
-use App\View\Components\AdminLayout;
+use App\Http\Controllers\UserPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +24,8 @@ Route::controller(UserPageController::class)->group(function () {
     Route::get('/struktur/staff', 'structure_show')->name('staff');
 
     Route::get('/akademik', 'akademik_show')->name('akademik');
+
+    Route::get('/ekstrakurikuler', 'ekstrakurikuler_show')->name('ekstra');
 });
 
 Route::get('/profil', function() {
@@ -37,10 +35,6 @@ Route::get('/profil', function() {
 Route::get('/fasilitas', function() {
     return view('user.fasilitas');
 })->name('fasilitas');
-
-Route::get('/ekstrakurikuler', function() {
-    return view('user.ekstrakurikuler');
-})->name('ekstra');
 
 //admin
 Route::controller(AdminPageController::class)->group(function() {

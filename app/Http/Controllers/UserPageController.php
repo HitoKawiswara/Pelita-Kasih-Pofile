@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AkademikImg;
+use App\Models\Ekstrakurikuler;
 use App\Models\News;
 use App\Models\Structure;
 use Illuminate\Http\Request;
@@ -23,13 +24,17 @@ class UserPageController extends Controller
         } elseif ($request->is('struktur/staff')) {
             return view('user.struktur-staff')->with(['struktur' => $struktur]);
         }
-
-        return abort(404);
     }
 
     public function akademik_show() {
         $images = AkademikImg::all();
         
         return view('user.akademik')->with(['images' => $images]);
+    }
+
+    public function ekstrakurikuler_show() {
+        $ekstra = Ekstrakurikuler::all();
+
+        return view('user.ekstrakurikuler')->with(['ekskul' => $ekstra]);
     }
 }

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AkademikImg>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Ekstrakurikuler>
  */
-class AkademikImgFactory extends Factory
+class EkstrakurikulerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class AkademikImgFactory extends Factory
     public function definition(): array
     {
         return [
-            'type' => fake()->randomElement(['tk', 'sd', 'smp', 'sma']),
+            'name' => fake()->title('60'),
+            'description' => fake()->text('400'),
         ];
     }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('akademik_imgs', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
+            $table->string('img')->default('akademik_img_ex.png');
             $table->enum('type', ['tk', 'sd', 'smp', 'sma']);
             $table->timestamps();
         });

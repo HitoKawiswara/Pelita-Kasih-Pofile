@@ -74,5 +74,33 @@ const swiper4 = new Swiper('.swiper4', {
         nextEl: ".swiper-button-next4",
         prevEl: ".swiper-button-prev4",
     },
+});
 
+const swiper5 = new Swiper('.swiper5', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+
+    autoplay: {
+        delay: 2000,
+    },
+
+    effect: 'cards',
+    cardsEffect: {
+        perSlideOffset: 10,
+        perSlideRotate: 3,
+        rotate: true,
+        slideShadows: true,
+    },
+
+    
+    pagination: {
+        el: ".swiper-pagination5",
+        clickable: true,
+    },
+    
+    navigation: {
+        nextEl: ".swiper-button-next5",
+        prevEl: ".swiper-button-prev5",
+    },
 });
