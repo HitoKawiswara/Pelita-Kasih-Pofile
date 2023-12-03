@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AkademikImg;
 use App\Models\News;
 use App\Models\Structure;
+use App\Models\Ekstrakurikuler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -33,6 +34,13 @@ class AdminPageController extends Controller
         $structures = Structure::all()->sortBy('work_as');
 
         return view('admin.struktur')->with(['structures' => $structures]);
+    }
+
+    public function show_ekstrakurikuler()
+    {
+        $ekskul = Ekstrakurikuler::all();
+
+        return view('admin.ekstrakurikuler')->with(['ekskul' => $ekskul]);
     }
 
     //store
@@ -74,7 +82,7 @@ class AdminPageController extends Controller
         $reqImgExt = 'required|image|mimes:jpeg,png,jpg,gif';
 
         $validatedData = $request->validate([
-            'img' => $reqImgExt,
+            'image' => $reqImgExt,
             'type' => 'required|in:tk,sd,smp,sma',
         ]);
 
@@ -121,8 +129,40 @@ class AdminPageController extends Controller
 
             return redirect()->back()->with('success', 'Structure added successfully');
         }
+    }
 
+<<<<<<< Updated upstream
         return redirect()->back()->with('error', 'Failed to add structure');
+=======
+    public function store_ekskul(Request $request)
+    {
+        $reqImgExt = 'required|image|mimes:jpeg,png,jpg,gif';
+
+        $validatedData = $request->validate([
+            'img' => $reqImgExt,
+            'img1' => $reqImgExt,
+            'img2' => $reqImgExt,
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:4294967295',
+        ]);
+
+        foreach (['thumbnail', 'img1', 'img2'] as $imageField) {
+            if ($request->hasFile($imageField)) {
+                $image = $request->file($imageField);
+                $filename = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
+
+                // Store the image in the storage directory
+                $image->storeAs('public/images/berita', $filename);
+
+                // Save the filename to the $validatedData array
+                $validatedData[$imageField] = $filename;
+            }
+        }
+
+        News::create($validatedData);
+
+        return redirect()->route('adminBerita')->with('success', 'News Added !');
+>>>>>>> Stashed changes
     }
 
     //delete only
