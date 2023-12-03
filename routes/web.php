@@ -67,6 +67,11 @@ Route::controller(AdminPageController::class)->group(function() {
     Route::put('/admin/struktur/update/{id}', 'update_structure')->name('update_structure');
 
     Route::delete('/admin/struktur/delete/{id}', 'delete_structure')->name('delete_structure');
+
+    Route::get('/admin/struktur/search', 'search_structure')->name('search_structure');
+    
+    Route::get('/admin/struktur/filter', 'filter_structure')->name('filter_structure');
+
 });
 
 Route::middleware('auth')->group(function () {

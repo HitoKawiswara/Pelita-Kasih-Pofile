@@ -82,12 +82,12 @@ class AdminPageController extends Controller
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('public/images/akademik/' . $validatedData['type'], $imageName);
-    
+
             $akademikImg = new AkademikImg;
             $akademikImg->img = $imageName;
             $akademikImg->type = $validatedData['type'];
             $akademikImg->save();
-    
+
             return redirect()->route('admin.akademik')->with('success', 'Image uploaded successfully');
         }
 
@@ -99,7 +99,7 @@ class AdminPageController extends Controller
         $reqImgExt = 'required|image|mimes:jpeg,png,jpg,gif';
 
         $validatedData = $request->validate([
-            'img' => 'required|image|' . $reqImgExt,
+            'img' => $reqImgExt,
             'name' => 'required|string|max:60',
             'work_as' => 'required|in:guru,staff,kepala sekolah,wakil kepala sekolah',
             'job_desc' => 'nullable|string|max:30',
@@ -122,11 +122,11 @@ class AdminPageController extends Controller
             return redirect()->back()->with('success', 'Structure added successfully');
         }
 
-        return redirect()->back()->with('error', 'Failed to add structure');
     }
 
     //delete only
-    public function delete_akademik(Request $request, $id) {
+    public function delete_akademik(Request $request, $id)
+    {
         $image = AkademikImg::findOrFail($id);
 
         $image->delete();
@@ -134,7 +134,8 @@ class AdminPageController extends Controller
         return redirect()->back();
     }
 
-    public function delete_structure(Request $request, $id) {
+    public function delete_structure(Request $request, $id)
+    {
         $image = Structure::findOrFail($id);
 
         $image->delete();
@@ -143,7 +144,8 @@ class AdminPageController extends Controller
     }
 
     //soft delete
-    public function soft_delete_news(Request $request, $id) {
+    public function soft_delete_news(Request $request, $id)
+    {
         $news = News::findOrFail($id);
         $news->delete();
 
@@ -151,7 +153,8 @@ class AdminPageController extends Controller
     }
 
     //force delete
-    public function force_delete_news(Request $request, $id) {
+    public function force_delete_news(Request $request, $id)
+    {
         $softDeletedNews = News::onlyTrashed()->find($id);
 
         if ($softDeletedNews) {
@@ -164,7 +167,8 @@ class AdminPageController extends Controller
 
 
     //restore
-    public function restore_news(Request $request, $id) {
+    public function restore_news(Request $request, $id)
+    {
         $news = News::withTrashed()->findOrFail($id);
         $news->restore();
 
@@ -182,7 +186,6 @@ class AdminPageController extends Controller
             'duration' => 'required|numeric',
         ]);
 
-        // Update the news item attributes
         $newsItem->title = $validatedData['title'];
         $newsItem->content = $validatedData['content'];
         $newsItem->duration = $validatedData['duration'];
@@ -191,5 +194,50 @@ class AdminPageController extends Controller
 
         return redirect()->back();
     }
-    
+
+    public function update_structure(Request $request, $id)
+    {
+        $reqImgExt = 'required|image|mimes:jpeg,png,jpg,gif';
+
+        $teacherEdited = Structure::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'img' => $reqImgExt,
+            'name' => 'required|max:60',
+            'work_as' => 'required',
+            'job_desc' => 'required',
+            'category' => 'required',
+        ]);
+
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/images/struktur', $imageName);
+
+            $teacherEdited->img = $imageName;
+        }
+
+        $teacherEdited->name = $validatedData['name'];
+        $teacherEdited->work_as = $validatedData['work_as'];
+        $teacherEdited->job_desc = $validatedData['job_desc'];
+        $teacherEdited->category = $validatedData['category'];
+
+        $teacherEdited->save();
+
+        return redirect()->back();
+    }
+
+    //search
+    public function search_structure(Request $request)
+    {
+        $searchQuery = $request->input('search');
+
+        $searchRes = Structure::where('name', 'like', '%' . $searchQuery . '%')
+            ->orWhere('work_as', 'like', '%' . $searchQuery . '%')
+            ->orWhere('job_desc', 'like', '%' . $searchQuery . '%')
+            ->orWhere('category', 'like', '%' . $searchQuery . '%')
+            ->get();
+
+        return view('admin.struktur')->with(['searchRes' => $searchRes]);
+    }
 }
