@@ -156,9 +156,8 @@
             const itemId = document.getElementById('itemId').value;
             const nama = document.getElementById('editnama').value;
             const description = document.getElementById('editDescription').value;
-            const duration = document.getElementById('editDuration').value;
 
-            fetch(`/admin/ekstra/update/${itemId}`, {
+            fetch(`/admin/ekstrakurikuler/update/${itemId}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
