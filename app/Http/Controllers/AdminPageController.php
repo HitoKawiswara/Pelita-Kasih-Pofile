@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AkademikImg;
 use App\Models\News;
 use App\Models\Structure;
+use App\Models\Ekstrakurikuler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -124,9 +125,34 @@ class AdminPageController extends Controller
 
     }
 
-    //delete only
-    public function delete_akademik(Request $request, $id)
+    public function store_ekstrakurikuler(Request $request)
     {
+        $reqImgExt = 'required|image|mimes:jpeg,png,jpg,gif';
+
+        $validatedData = $request->validate([
+            'img' => $reqImgExt,
+            'img1' => $reqImgExt,
+            'img2' => $reqImgExt,
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:4294967295',
+        ]);
+
+        foreach (['img', 'img1', 'img2'] as $imageField) {
+            if ($request->hasFile($imageField)) {
+                $image = $request->file($imageField);
+                $filename = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('public/images/ekstra', $filename);
+                $validatedData[$imageField] = $filename;
+            }
+        }
+
+        Ekstrakurikuler::create($validatedData);
+
+        return redirect()->back()->with('success', 'Ekstrakurikuler Added !');
+    }
+
+    //delete only AKADEMIK
+    public function delete_akademik(Request $request, $id) {
         $image = AkademikImg::findOrFail($id);
 
         $image->delete();
@@ -194,12 +220,39 @@ class AdminPageController extends Controller
 
         return redirect()->back();
     }
+     //soft delete ekstrakurikuler
+     public function soft_delete_ekstra(Request $request, $id) {
+        $news = Ekstrakurikuler::findOrFail($id);
+        $news->delete();
 
-    public function update_structure(Request $request, $id)
+        return redirect()->back();
+    }
+
+    //force delete ekstrakurikuler
+    public function force_delete_ekstra(Request $request, $id) {
+        $softDeletedNews = Ekstrakurikuler::onlyTrashed()->find($id);
+
+        if ($softDeletedNews) {
+            $softDeletedNews->forceDelete();
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+    }
+
+
+    //restore ekstrakurikuler
+    public function restore_ekstra(Request $request, $id) {
+        $news = Ekstrakurikuler::withTrashed()->findOrFail($id);
+        $news->restore();
+
+        return redirect()->back();
+    }
+
+    //update ekstrakurikuler
+    public function update_ekstra(Request $request, $id)
     {
-        $reqImgExt = 'required|image|mimes:jpeg,png,jpg,gif';
-
-        $teacherEdited = Structure::findOrFail($id);
+        $ekstraItem = Ekstrakurikuler::findOrFail($id);
 
         $validatedData = $request->validate([
             'img' => $reqImgExt,
