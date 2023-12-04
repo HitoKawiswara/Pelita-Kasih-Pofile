@@ -225,27 +225,15 @@ class AdminPageController extends Controller
 
         return redirect()->back();
     }
-     //soft delete ekstrakurikuler
-     public function soft_delete_ekstra(Request $request, $id) {
-        $news = Ekstrakurikuler::findOrFail($id);
-        $news->delete();
+
+    //delete ekstrakurikuler
+    public function delete_ekstrakurikuler(Request $request, $id) {
+        $ekskul = Ekstrakurikuler::findOrFail($id);
+
+        $ekskul->delete();
 
         return redirect()->back();
     }
-
-    //force delete ekstrakurikuler
-    public function force_delete_ekstra(Request $request, $id) {
-        $softDeletedNews = Ekstrakurikuler::onlyTrashed()->find($id);
-
-        if ($softDeletedNews) {
-            $softDeletedNews->forceDelete();
-            return redirect()->back();
-        } else {
-            return redirect()->back();
-        }
-    }
-
-
     //search
     public function search_structure(Request $request)
     {
