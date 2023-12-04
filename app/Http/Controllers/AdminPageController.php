@@ -131,10 +131,7 @@ class AdminPageController extends Controller
         }
     }
 
-<<<<<<< Updated upstream
-        return redirect()->back()->with('error', 'Failed to add structure');
-=======
-    public function store_ekskul(Request $request)
+    public function store_ekstrakurikuler(Request $request)
     {
         $reqImgExt = 'required|image|mimes:jpeg,png,jpg,gif';
 
@@ -146,26 +143,21 @@ class AdminPageController extends Controller
             'description' => 'required|string|max:4294967295',
         ]);
 
-        foreach (['thumbnail', 'img1', 'img2'] as $imageField) {
+        foreach (['img', 'img1', 'img2'] as $imageField) {
             if ($request->hasFile($imageField)) {
                 $image = $request->file($imageField);
                 $filename = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
-
-                // Store the image in the storage directory
-                $image->storeAs('public/images/berita', $filename);
-
-                // Save the filename to the $validatedData array
+                $image->storeAs('public/images/ekstra', $filename);
                 $validatedData[$imageField] = $filename;
             }
         }
 
-        News::create($validatedData);
+        Ekstrakurikuler::create($validatedData);
 
-        return redirect()->route('adminBerita')->with('success', 'News Added !');
->>>>>>> Stashed changes
+        return redirect()->route('adminEkstrakurikuler')->with('success', 'Ekstrakurikuler Added !');
     }
 
-    //delete only
+    //delete only AKADEMIK
     public function delete_akademik(Request $request, $id) {
         $image = AkademikImg::findOrFail($id);
 
@@ -182,7 +174,7 @@ class AdminPageController extends Controller
         return redirect()->back();
     }
 
-    //soft delete
+    //soft delete NEWS
     public function soft_delete_news(Request $request, $id) {
         $news = News::findOrFail($id);
         $news->delete();
@@ -190,7 +182,7 @@ class AdminPageController extends Controller
         return redirect()->back();
     }
 
-    //force delete
+    //force delete NEWS
     public function force_delete_news(Request $request, $id) {
         $softDeletedNews = News::onlyTrashed()->find($id);
 
@@ -203,7 +195,7 @@ class AdminPageController extends Controller
     }
 
 
-    //restore
+    //restore NEWS
     public function restore_news(Request $request, $id) {
         $news = News::withTrashed()->findOrFail($id);
         $news->restore();
@@ -211,7 +203,7 @@ class AdminPageController extends Controller
         return redirect()->back();
     }
 
-    //update
+    //update NEWS
     public function update_news(Request $request, $id)
     {
         $newsItem = News::findOrFail($id);
@@ -222,7 +214,7 @@ class AdminPageController extends Controller
             'duration' => 'required|numeric',
         ]);
 
-        // Update the news item attributes
+        // Update the news item attributes NEWS
         $newsItem->title = $validatedData['title'];
         $newsItem->content = $validatedData['content'];
         $newsItem->duration = $validatedData['duration'];
@@ -231,5 +223,51 @@ class AdminPageController extends Controller
 
         return redirect()->back();
     }
-    
+     //soft delete ekstrakurikuler
+     public function soft_delete_ekstra(Request $request, $id) {
+        $news = Ekstrakurikuler::findOrFail($id);
+        $news->delete();
+
+        return redirect()->back();
+    }
+
+    //force delete ekstrakurikuler
+    public function force_delete_ekstra(Request $request, $id) {
+        $softDeletedNews = Ekstrakurikuler::onlyTrashed()->find($id);
+
+        if ($softDeletedNews) {
+            $softDeletedNews->forceDelete();
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+    }
+
+
+    //restore ekstrakurikuler
+    public function restore_ekstra(Request $request, $id) {
+        $news = Ekstrakurikuler::withTrashed()->findOrFail($id);
+        $news->restore();
+
+        return redirect()->back();
+    }
+
+    //update ekstrakurikuler
+    public function update_ekstra(Request $request, $id)
+    {
+        $ekstraItem = Ekstrakurikuler::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+        ]);
+
+        // Update the news item attributes Sekstrakurikuler
+        $ekstraItem->name = $validatedData['name'];
+        $ekstraItem->description = $validatedData['description'];
+
+        $ekstraItem->save();
+
+        return redirect()->back();
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AkademikImg;
+use App\Models\Ekstrakurikuler;
 use App\Models\News;
 use App\Models\Structure;
 use Illuminate\Http\Request;
@@ -32,4 +33,10 @@ class UserPageController extends Controller
         
         return view('user.akademik')->with(['images' => $images]);
     }
+    public function ekstrakurikuler_show() {
+        $images = Ekstrakurikuler::all();
+        
+        return view('user.akademik')->with(['img' => $images]);
+    }
+
 }

@@ -75,6 +75,14 @@ Route::controller(AdminPageController::class)->group(function() {
     Route::put('/admin/struktur/update/{id}', 'update_structure')->name('update_structure');
 
     Route::delete('/admin/struktur/delete/{id}', 'delete_structure')->name('delete_structure');
+
+    //Ekstrakurikuler
+    Route::get('/admin/ekstrakurikuler', 'show_ekstrakurikuler')->middleware(['auth', 'verified'])->name('adminEkstrakurikuler');
+    Route::post('/admin/ekstrakurikuler', 'store_ekstrakurikuler')->name('store_ekstrakurikuler');
+
+    Route::put('/admin/ekstrakurikuler/update/{id}', 'update_ekstrakurikuler')->name('update_ekstrakurikuler');
+
+    Route::delete('/admin/ekstrakurikuler/delete/{id}', 'delete_ekstrakurikuler')->name('delete_ekstrakurikuler');
 });
 
 Route::middleware('auth')->group(function () {
