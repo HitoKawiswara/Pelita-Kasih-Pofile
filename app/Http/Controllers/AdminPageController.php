@@ -36,6 +36,13 @@ class AdminPageController extends Controller
         return view('admin.struktur')->with(['structures' => $structures]);
     }
 
+    public function show_ekstrakurikuler()
+    {
+        $ekskul = Ekstrakurikuler::all();
+
+        return view('admin.ekstrakurikuler')->with(['ekskul' => $ekskul]);
+    }
+
     //store
     public function store_news(Request $request)
     {

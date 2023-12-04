@@ -22,6 +22,9 @@
                     <x-nav-link :href="route('adminStruktur')" :active="request()->routeIs('adminStruktur')" class="text-white text-xl font-normal">
                         {{ __('Struktur Sekolah') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('adminEkstrakurikuler')" :active="request()->routeIs('adminEkstrakurikuler')" class="text-white text-xl font-normal">
+                        {{ __('EkstraKurikuler') }}
+                    </x-nav-link>
                 </div>
                 <x-dropdown align="right" width="48" contentClasses="bg-primary-500 overflow-hidden" class="border-none">
                     <x-slot name="trigger">
@@ -92,6 +95,9 @@
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('adminStruktur')" :active="request()->routeIs('adminStruktur')" class="text-white">
                     {{ __('Struktur Sekolah') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('adminEkstrakurikuler')" :active="request()->routeIs('adminEkstrakurikuler')" class="text-white">
+                    {{ __('Ekstrakurikuler') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
