@@ -85,7 +85,7 @@
                 
                 {{-- slide start --}}
                 @foreach ($newsList as $news)
-                <x-news-card :src="$news->thumbnail" alt="news-cover">
+                <x-news-card :src="$news->thumbnail" alt="news-cover" :href="('/berita/more/' . $news->id)">
                     <x-slot name="header">
                         {{ $news->title }}
                     </x-slot>

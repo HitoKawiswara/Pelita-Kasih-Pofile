@@ -9,8 +9,8 @@
                         class="w-full" onsubmit="handleFormSubmit(event)" >
                         @csrf
                         <div class="mb-4">
-                            <label for="image" class="block font-semibold mb-1">Upload Gambar</label>
-                            <input type="file" name="image" id="image" accept="image/*" required
+                            <label for="img" class="block font-semibold mb-1">Upload Gambar</label>
+                            <input type="file" name="img" id="img" accept="image/*" required
                                 class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
                         </div>
                         <div class="mb-4">

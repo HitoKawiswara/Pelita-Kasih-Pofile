@@ -15,7 +15,7 @@
                 @foreach ( $images as $row )
                     @if ( $row->type == 'tk')
                         <div class="swiper-slide">
-                            <img src="{{ asset('storage/images/akademik/tk/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                            <img src="{{ asset('storage/images/akademik/tk/' . $row->img) }}" class="aspect-video object-cover rounded-lg" alt="">
                         </div>
                     @endif
                 @endforeach
@@ -49,7 +49,7 @@
                 @foreach ( $images as $row )
                     @if ( $row->type == 'sd')
                         <div class="swiper-slide">
-                            <img src="{{ asset('storage/images/akademik/sd/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                            <img src="{{ asset('storage/images/akademik/sd/' . $row->img) }}" class="aspect-video object-cover rounded-lg" alt="">
                         </div>
                     @endif
                 @endforeach
@@ -82,7 +82,7 @@
                 @foreach ( $images as $row )
                     @if ( $row->type == 'smp')
                         <div class="swiper-slide">
-                            <img src="{{ asset('storage/images/akademik/smp/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                            <img src="{{ asset('storage/images/akademik/smp/' . $row->img) }}" class="aspect-video object-cover rounded-lg" alt="">
                         </div>
                     @endif
                 @endforeach
@@ -117,7 +117,7 @@
                 @foreach ( $images as $row )
                     @if ( $row->type == 'sma')
                         <div class="swiper-slide">
-                            <img src="{{ asset('storage/images/akademik/sma/' . $row->img) }}" class="aspect-video rounded-lg" alt="">
+                            <img src="{{ asset('storage/images/akademik/sma/' . $row->img) }}" class="aspect-video object-cover rounded-lg" alt="">
                         </div>
                     @endif
                 @endforeach

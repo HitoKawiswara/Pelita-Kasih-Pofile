@@ -14,9 +14,11 @@
 </head>
 
 <body class="antialiased bg-zinc-100">
-    <main>
-        {{ $slot }}
-    </main>
+    <body class="font-sans text-gray-900 antialiased">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+            {{ $slot }}
+        </div>
+    </body>
     <script src="{{ asset('js/togglePassVis.js') }}"></script>
 </body>
 

@@ -1,0 +1,22 @@
+.custom-img-hero {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.custom-img-small {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 325px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.scrollable-content {
+    max-height: 600px;
+    overflow-y: auto;
+}

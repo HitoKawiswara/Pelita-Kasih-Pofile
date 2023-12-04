@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name', 60);
             $table->longtext('description');
-            $table->string('img')->default('ekstra_ex_img1.png');
-            $table->string('img1')->default('ekstra_ex_img2.png');
-            $table->string('img2')->default('ekstra_ex_img3.png');
+            $table->string('img');
+            $table->string('img1');
+            $table->string('img2');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -85,8 +85,8 @@ class AdminPageController extends Controller
         ]);
         
         foreach (['img'] as $imageField) {
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
+            if ($request->hasFile('img')) {
+                $image = $request->file('img');
                 $imageName = time() . '.' . $image->getClientOriginalExtension();
                 
                 $image->storeAs('public/images/akademik/' . $validatedData['type'], $imageName);
@@ -97,7 +97,7 @@ class AdminPageController extends Controller
 
         AkademikImg::create($validatedData);
 
-        return redirect()->route('admin.akademik')->with('success', 'Image uploaded successfully');
+        return redirect()->back()->with('success', 'Image uploaded successfully');
     }
 
     public function store_structure(Request $request)
@@ -160,6 +160,8 @@ class AdminPageController extends Controller
     public function delete_akademik(Request $request, $id) {
         $image = AkademikImg::findOrFail($id);
 
+        Storage::delete('public/images/akademik/' . $image->type . $image->img);
+
         $image->delete();
 
         return redirect()->back();
@@ -169,7 +171,17 @@ class AdminPageController extends Controller
     {
         $image = Structure::findOrFail($id);
 
+        Storage::delete('public/images/struktur/' . $image->img);
+
         $image->delete();
+
+        return redirect()->back();
+    }
+
+    public function delete_ekstrakurikuler(Request $request, $id) {
+        $ekskul = Ekstrakurikuler::findOrFail($id);
+
+        $ekskul->delete();
 
         return redirect()->back();
     }
@@ -189,6 +201,11 @@ class AdminPageController extends Controller
         $softDeletedNews = News::onlyTrashed()->find($id);
 
         if ($softDeletedNews) {
+
+            Storage::delete('public/images/berita/' . $softDeletedNews->thumbnail);
+            Storage::delete('public/images/berita/' . $softDeletedNews->img1);
+            Storage::delete('public/images/berita/' . $softDeletedNews->img2);
+
             $softDeletedNews->forceDelete();
             return redirect()->back();
         } else {
@@ -226,14 +243,28 @@ class AdminPageController extends Controller
         return redirect()->back();
     }
 
-    //delete ekstrakurikuler
-    public function delete_ekstrakurikuler(Request $request, $id) {
-        $ekskul = Ekstrakurikuler::findOrFail($id);
+    public function update_structure(Request $request, $id)
+    {
+        $teacherEdited = Structure::findOrFail($id);
 
-        $ekskul->delete();
+        $validatedData = $request->validate([
+            'name' => 'required|max:60',
+            'work_as' => 'required|in:guru,staff,kepala sekolah, wakil kepala sekolah',
+            'job_desc' => 'required|max:60',
+            'category' => 'required|in:tk,sd,smp,sma',
+        ]);
+
+        $teacherEdited->name = $validatedData['name'];
+        $teacherEdited->work_as = $validatedData['work_as'];
+        $teacherEdited->job_desc = $validatedData['job_desc'];
+        $teacherEdited->category = $validatedData['category'];
+
+
+        $teacherEdited->save();
 
         return redirect()->back();
     }
+
     //search
     public function search_structure(Request $request)
     {

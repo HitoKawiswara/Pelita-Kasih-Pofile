@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\News;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class SoftDeleteExpiredNews extends Command
 {
@@ -30,7 +31,7 @@ class SoftDeleteExpiredNews extends Command
         $news = News::all();
 
         foreach ($news as $item) {
-            $willDeleteAt = Carbon::parse($item->updated_at)->addDays($item->will_delete_at);
+            $willDeleteAt = Carbon::parse($item->updated_at)->addDays($item->duration);
 
             if ($willDeleteAt->isPast()) {
                 $item->delete();

@@ -107,10 +107,9 @@
                                         <button type="submit"
                                             class="py-2 px-4 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">Delete</button>
                                     </form>
+                                    <button onclick="editNews('{{ $item->id }}', '{{ $item->title }}', '{{ str_replace(["\r\n", "\r", "\n"], '\\n', addslashes($item->content)) }}', '{{ $item->duration }}')"
+                                        class="my-3 mx-3 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Edit</button>
                                 @endif
-                                <button
-                                    onclick="editNews('{{ $item->id }}', '{{ $item->title }}', '{{ $item->content }}', '{{ $item->duration }}')"
-                                    class="my-3 mx-3 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Edit</button>
                             </div>
                         </div>
                         {{-- edit modal start --}}

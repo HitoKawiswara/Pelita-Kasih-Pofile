@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('thumbnail')->default('berita-example.png');
-            $table->string('img1')->default('berita-example.png');
-            $table->string('img2')->default('berita-example.png');
+            $table->string('thumbnail');
+            $table->string('img1');
+            $table->string('img2');
             $table->string('title', 60);
             $table->longText('content')->nullable(true);
             $table->smallInteger('duration')->default(10);

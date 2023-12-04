@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 //user
 Route::controller(UserPageController::class)->group(function () {
     Route::get('/', 'news_show')->name('main');
+    Route::get('/berita/more/{id}', 'news_show_more')->name('show_more');
 
     Route::get('/struktur/guru', 'structure_show')->name('guru');
     Route::get('/struktur/staff', 'structure_show')->name('staff');

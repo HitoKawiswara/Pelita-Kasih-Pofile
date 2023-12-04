@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('structures', function (Blueprint $table) {
             $table->id();
-            $table->string('img')->default('guru-staff-profile-example.png');
+            $table->string('img');
             $table->string('name', 60);
             $table->enum('work_as', ['guru', 'staff', 'kepala sekolah', 'wakil kepala sekolah']);
             $table->string('job_desc', 30)->nullable(true);

@@ -22,7 +22,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => 'admin01',
-            'email' => 'sekolahpelitakasih.web@gmail.com',
+            'email' => 'pelitakasih.web@gmail.com',
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('pelitakasih0312'),
             'remember_token' => Str::random(10),

@@ -1,10 +1,10 @@
-@props(['active', 'align' => 'right', 'width' => '40', 'contentClasses' => 'py-1 bg-white/10'])
+@props(['active', 'align' => 'right', 'width' => '40', 'contentClasses' => 'py-1 bg-primary-500'])
 
 @php
 $classes = ($active ?? false)
         ? 'relative py-1 border-b-2 border-white font-medium leading-5 focus:outline-none focus:border-white transition duration-150 ease-in-out'
 
-        : 'relative py-1 border-b-2 border-transparent font-medium leading-5  hover:border-gray-300 focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out';
+        : 'relative py-1 border-b-2 border-transparent font-medium leading-5 hover:border-gray-300 focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out';
 
 switch ($align) {
     case 'left':

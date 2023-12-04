@@ -14,13 +14,13 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non maiores voluptates exercitationem repellat placeat est vitae, voluptatibus fugit asperiores pariatur dolore sunt neque deleniti officiis corporis aliquam voluptatem eaque nam praesentium cumque inventore aspernatur iure consequatur! Commodi mollitia maiores debitis, velit, fugiat quis optio ipsa quia dignissimos porro nam at?
             </p>
         </div>
-        <img class="aspect-video rounded-bl-full shadow-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
+        <img class="aspect-video object-cover rounded-bl-full shadow-lg" src="{{ asset('storage/assets/Lapangan.jpg') }}" alt="">
     </div>
     {{-- lapangan end --}}
 
     {{-- perpus start --}}
     <div class="mt-10 flex h-96 bg-primary-500 text-white  border-border-red-500" id="perpus">
-        <img class=" aspect-video rounded-br-full shadow-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
+        <img class=" aspect-video object-cover rounded-br-full shadow-lg" src="{{ asset('storage/assets/Perpus.jpg') }}" alt="">
         <div class="my-auto mr-32 text-end">
             <x-title-lg2>
                 {{ __('') }}
@@ -44,7 +44,7 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non maiores voluptates exercitationem repellat placeat est vitae, voluptatibus fugit asperiores pariatur dolore sunt neque deleniti officiis corporis aliquam voluptatem eaque nam praesentium cumque inventore aspernatur iure consequatur! Commodi mollitia maiores debitis, velit, fugiat quis optio ipsa quia dignissimos porro nam at?
             </p>
         </div>
-        <img class=" aspect-video rounded-bl-full shadow-lg" src="{{ asset('storage/assets/Carousel1.png') }}" alt="">
+        <img class=" aspect-video object-cover rounded-bl-full shadow-lg" src="{{ asset('storage/assets/Lab.jpg') }}" alt="">
     </div>
     {{-- lab end --}}
 
