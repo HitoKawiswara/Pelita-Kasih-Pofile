@@ -227,66 +227,15 @@ class AdminPageController extends Controller
 
         return redirect()->back();
     }
-     //soft delete ekstrakurikuler
-     public function soft_delete_ekstra(Request $request, $id) {
-        $news = Ekstrakurikuler::findOrFail($id);
-        $news->delete();
+
+    //delete ekstrakurikuler
+    public function delete_ekstrakurikuler(Request $request, $id) {
+        $ekskul = Ekstrakurikuler::findOrFail($id);
+
+        $ekskul->delete();
 
         return redirect()->back();
     }
-
-    //force delete ekstrakurikuler
-    public function force_delete_ekstra(Request $request, $id) {
-        $softDeletedNews = Ekstrakurikuler::onlyTrashed()->find($id);
-
-        if ($softDeletedNews) {
-            $softDeletedNews->forceDelete();
-            return redirect()->back();
-        } else {
-            return redirect()->back();
-        }
-    }
-
-
-    //restore ekstrakurikuler
-    public function restore_ekstra(Request $request, $id) {
-        $news = Ekstrakurikuler::withTrashed()->findOrFail($id);
-        $news->restore();
-
-        return redirect()->back();
-    }
-
-    //update ekstrakurikuler
-    public function update_ekstra(Request $request, $id)
-    {
-        $ekstraItem = Ekstrakurikuler::findOrFail($id);
-
-        $validatedData = $request->validate([
-            'img' => $reqImgExt,
-            'name' => 'required|max:60',
-            'work_as' => 'required',
-            'job_desc' => 'required',
-            'category' => 'required',
-        ]);
-
-        if ($request->hasFile('img')) {
-            $image = $request->file('img');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/images/struktur', $imageName);
-
-            $teacherEdited->img = $imageName;
-        }
-
-        $teacherEdited->name = $validatedData['name'];
-        $teacherEdited->work_as = $validatedData['work_as'];
-        $teacherEdited->job_desc = $validatedData['job_desc'];
-        $teacherEdited->category = $validatedData['category'];
-
-        $teacherEdited->save();
-
-        return redirect()->back();
-    }
-
     //search
     public function search_structure(Request $request)
     {

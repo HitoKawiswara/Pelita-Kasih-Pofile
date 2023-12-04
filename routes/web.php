@@ -72,14 +72,9 @@ Route::controller(AdminPageController::class)->group(function() {
     
     //Ekstrakurikuler
     Route::get('/admin/ekstrakurikuler', 'show_ekstrakurikuler')->middleware(['auth', 'verified'])->name('adminEkstrakurikuler');
-
     Route::post('/admin/ekstrakurikuler', 'store_ekstrakurikuler')->name('store_ekstrakurikuler');
+    Route::delete('/admin/ekstrakurikuler/del/{id}', 'delete_ekstrakurikuler')->name('delete_ekstrakurikuler');
 
-    Route::put('/admin/ekstrakurikuler/update/{id}', 'update_ekstrakurikuler')->name('update_ekstrakurikuler');
-
-    Route::delete('/admin/ekstrakurikuler/del/{id}', 'soft_delete_ekstrakurikuler')->name('soft_delete_ekstrakurikuler');
-    
-    Route::delete('/admin/ekstrakurikuler/force-del/{id}', 'force_delete_ekstrakurikuler')->name('force_delete_ekstrakurikuler');
 });
 
 Route::middleware('auth')->group(function () {
