@@ -18,8 +18,7 @@
 
 <body class="antialiased bg-zinc-100">
     <div id="top">
-        <x-app-logo/>
-        @include('layouts.navigation')
+            @include('layouts.navigation')
         <main class="relative">
             {{ $slot }}
         </main>

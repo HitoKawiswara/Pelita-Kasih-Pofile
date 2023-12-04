@@ -63,10 +63,8 @@ class AdminPageController extends Controller
                 $image = $request->file($imageField);
                 $filename = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
 
-                // Store the image in the storage directory
                 $image->storeAs('public/images/berita', $filename);
 
-                // Save the filename to the $validatedData array
                 $validatedData[$imageField] = $filename;
             }
         }
@@ -85,21 +83,21 @@ class AdminPageController extends Controller
             'img' => $reqImgExt,
             'type' => 'required|in:tk,sd,smp,sma',
         ]);
+        
+        foreach (['img'] as $imageField) {
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                
+                $image->storeAs('public/images/akademik/' . $validatedData['type'], $imageName);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/images/akademik/' . $validatedData['type'], $imageName);
-
-            $akademikImg = new AkademikImg;
-            $akademikImg->img = $imageName;
-            $akademikImg->type = $validatedData['type'];
-            $akademikImg->save();
-
-            return redirect()->route('admin.akademik')->with('success', 'Image uploaded successfully');
+                $validatedData[$imageField] = $imageName;
+            }
         }
 
-        return redirect()->back()->with('error', 'Failed to upload image');
+        AkademikImg::create($validatedData);
+
+        return redirect()->route('admin.akademik')->with('success', 'Image uploaded successfully');
     }
 
     public function store_structure(Request $request)
@@ -113,23 +111,21 @@ class AdminPageController extends Controller
             'job_desc' => 'nullable|string|max:30',
             'category' => 'required|in:tk,sd,smp,sma',
         ]);
-
-        if ($request->hasFile('img')) {
-            $image = $request->file('img');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/images/struktur', $imageName);
-
-            $structure = new Structure;
-            $structure->img = $imageName;
-            $structure->name = $validatedData['name'];
-            $structure->work_as = $validatedData['work_as'];
-            $structure->job_desc = $validatedData['job_desc'];
-            $structure->category = $validatedData['category'];
-            $structure->save();
-
-            return redirect()->back()->with('success', 'Structure added successfully');
+        
+        foreach (['img'] as $imageField) {
+            if ($request->hasFile('img')) {
+                $image = $request->file('img');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+    
+                $image->storeAs('public/images/struktur', $imageName);
+    
+                $validatedData[$imageField] = $imageName;
+            }
         }
 
+        Structure::create($validatedData);
+
+        return redirect()->back()->with('success', 'Structure added successfully');
     }
 
     public function store_ekstrakurikuler(Request $request)
@@ -147,9 +143,11 @@ class AdminPageController extends Controller
         foreach (['img', 'img1', 'img2'] as $imageField) {
             if ($request->hasFile($imageField)) {
                 $image = $request->file($imageField);
-                $filename = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
-                $image->storeAs('public/images/ekstra', $filename);
-                $validatedData[$imageField] = $filename;
+                $imageName = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
+
+                $image->storeAs('public/images/ekstra', $imageName);
+                
+                $validatedData[$imageField] = $imageName;
             }
         }
 
@@ -158,7 +156,7 @@ class AdminPageController extends Controller
         return redirect()->back()->with('success', 'Ekstrakurikuler Added !');
     }
 
-    //delete only AKADEMIK
+    //delete only
     public function delete_akademik(Request $request, $id) {
         $image = AkademikImg::findOrFail($id);
 
@@ -247,45 +245,6 @@ class AdminPageController extends Controller
         }
     }
 
-
-    //restore ekstrakurikuler
-    public function restore_ekstra(Request $request, $id) {
-        $news = Ekstrakurikuler::withTrashed()->findOrFail($id);
-        $news->restore();
-
-        return redirect()->back();
-    }
-
-    //update ekstrakurikuler
-    public function update_ekstra(Request $request, $id)
-    {
-        $ekstraItem = Ekstrakurikuler::findOrFail($id);
-
-        $validatedData = $request->validate([
-            'img' => $reqImgExt,
-            'name' => 'required|max:60',
-            'work_as' => 'required',
-            'job_desc' => 'required',
-            'category' => 'required',
-        ]);
-
-        if ($request->hasFile('img')) {
-            $image = $request->file('img');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/images/struktur', $imageName);
-
-            $teacherEdited->img = $imageName;
-        }
-
-        $teacherEdited->name = $validatedData['name'];
-        $teacherEdited->work_as = $validatedData['work_as'];
-        $teacherEdited->job_desc = $validatedData['job_desc'];
-        $teacherEdited->category = $validatedData['category'];
-
-        $teacherEdited->save();
-
-        return redirect()->back();
-    }
 
     //search
     public function search_structure(Request $request)
