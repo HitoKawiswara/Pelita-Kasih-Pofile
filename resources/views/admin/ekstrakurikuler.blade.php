@@ -31,7 +31,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="nama" class="block font-semibold mb-1">Nama Ekskul</label>
-                            <input type="text" name="nama" id="nama" required
+                            <input type="text" name="name" id="name" required
                                 class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
                         </div>
                         <div class="mb-4">
