@@ -71,7 +71,7 @@ class AdminPageController extends Controller
 
         News::create($validatedData);
 
-        return redirect()->route('adminBerita')->with('success', 'News Added !');
+        return redirect()->back()->with('success', 'Ekstrakurikuler Added !');
     }
 
     public function store_akademik(Request $request)
