@@ -75,7 +75,7 @@
     {{-- search bar end --}}
     <div class="pb-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="{{ count($structures) === 0  ? 'hidden' : '' }}bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 grid grid-cols-4 gap-5">
                     @if (isset($searchRes))
                         @foreach ($searchRes as $structure)

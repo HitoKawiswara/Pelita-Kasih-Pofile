@@ -1,29 +1,29 @@
 <nav x-data="{ open: false }" class="bg-primary-500">
     <!-- Primary Navigation Menu -->
-    <div class="px-4 py-2 sm:px-6 lg:px-8">
+    <div class="px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-28">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <x-app-logo-sm/>
-                    <h1 class="text-white mx-3 font-semibold text-3xl">Pelita Kasih</h1>
+                    <h1 class="text-white mx-3 font-normal text-2xl">Pelita Kasih</h1>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <div class="sm:flex gap-10 hidden mr-5">
-                    <x-nav-link :href="route('adminBerita')" :active="request()->routeIs('adminBerita')" class="text-white text-xl font-normal">
+                <div class="sm:flex gap-7 hidden mr-5">
+                    <x-nav-link :href="route('adminBerita')" :active="request()->routeIs('adminBerita')" class="text-white text-base font-normal">
                         {{ __('Berita Terkini') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('adminAkademik')" :active="request()->routeIs('adminAkademik')" class="text-white text-xl font-normal">
+                    <x-nav-link :href="route('adminAkademik')" :active="request()->routeIs('adminAkademik')" class="text-white text-base font-normal">
                         {{ __('Akademik') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('adminStruktur')" :active="request()->routeIs('adminStruktur')" class="text-white text-xl font-normal">
+                    <x-nav-link :href="route('adminStruktur')" :active="request()->routeIs('adminStruktur')" class="text-white text-base font-normal">
                         {{ __('Struktur Sekolah') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('adminEkstrakurikuler')" :active="request()->routeIs('adminEkstrakurikuler')" class="text-white text-xl font-normal">
-                        {{ __('EkstraKurikuler') }}
+                    <x-nav-link :href="route('adminEkstrakurikuler')" :active="request()->routeIs('adminEkstrakurikuler')" class="text-white text-base font-normal">
+                        {{ __('Ekstrakurikuler') }}
                     </x-nav-link>
                 </div>
                 <x-dropdown align="right" width="48" contentClasses="bg-primary-500 overflow-hidden" class="border-none">

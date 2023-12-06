@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="text-2xl font-semibold mb-4">Pengaturan Ekstrakurikuler</h2>
+                    <h2 class="text-2xl font-semibold mb-4">Tambah Ekstrakurikuler</h2>
                     {{-- form start --}}
                     @if (session('success'))
                     <div class="bg-green-200 text-green-700 border border-green-600 px-4 py-2 rounded-md mb-4">
@@ -12,25 +12,25 @@
                     @endif
                     <p></p>
                     <form action="{{ route('store_ekstrakurikuler') }}" method="POST" enctype="multipart/form-data"
-                        class="w-full p-4" onsubmit="handleFormSubmit(event)">
+                        class="w-full p-4">
                         @csrf
                         <div class="mb-4">
-                            <label for="img" class="block font-semibold mb-1">Gambar</label>
+                            <label for="img" class="block font-semibold mb-1">Gambar 1</label>
                             <input type="file" name="img" id="img" accept="image/*" required
                                 class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
                         </div>
                         <div class="mb-4">
-                            <label for="img1" class="block font-semibold mb-1">Gambar 1</label>
+                            <label for="img1" class="block font-semibold mb-1">Gambar 2</label>
                             <input type="file" name="img1" id="img1" accept="image/*" required
                                 class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
                         </div>
-                        <label for="img2" class="block font-semibold mb-1">Gambar 2</label>
+                        <label for="img2" class="block font-semibold mb-1">Gambar 3</label>
                         <div class="mb-4">
                             <input type="file" name="img2" id="img2" accept="image/*" required
                                 class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
                         </div>
                         <div class="mb-4">
-                            <label for="nama" class="block font-semibold mb-1">Nama Ekskul</label>
+                            <label for="nama" class="block font-semibold mb-1">Nama Ekstrakurikuler</label>
                             <input type="text" name="name" id="name" required
                                 class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-secondary-500">
                         </div>
@@ -52,7 +52,7 @@
     </div>
     <div class="pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="{{ count($ekskul) === 0  ? 'hidden' : '' }}bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @foreach ($ekskul as $item)
                     <div class="bg-white overflow-hidden shadow-lg sm:rounded-md mb-10 overflow-x-auto relative">

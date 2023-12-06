@@ -71,7 +71,7 @@ class AdminPageController extends Controller
 
         News::create($validatedData);
 
-        return redirect()->back()->with('success', 'Ekstrakurikuler Added !');
+        return redirect()->back()->with('success', 'News Added !');
     }
 
     public function store_akademik(Request $request)
@@ -125,7 +125,7 @@ class AdminPageController extends Controller
 
         Structure::create($validatedData);
 
-        return redirect()->back()->with('success', 'Structure added successfully');
+        return redirect()->back()->with('success', 'Structure added !');
     }
 
     public function store_ekstrakurikuler(Request $request)

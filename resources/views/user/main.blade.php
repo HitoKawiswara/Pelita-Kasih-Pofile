@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout class="p-4 lg:p-8 xl:p-12">
     {{-- carousel start --}}
     <div class="swiper swiper1">
         <div class="swiper-wrapper">
@@ -8,9 +8,12 @@
                         {{ __('Example Slide 1') }}
                     </x-slot>
                     <x-slot name="desc">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium voluptatem repellendus ipsa illo quibusdam, eaque ullam alias sint sunt atque perferendis, rem culpa. Qui explicabo, magnam, molestiae sapiente, at quas omnis fugiat placeat pariatur vel eos? Pariatur molestias vel sint dolores, enim soluta placeat cumque doloremque est. Sapiente, voluptates numquam! Itaque culpa deserunt sapiente aspernatur vero nisi ut amet voluptatem reiciendis qui, ipsam ullam incidunt esse. Ipsa commodi sequi fugiat earum, architecto minima exercitationem animi blanditiis ducimus velit doloremque tempore facilis eum quos vero eius, illum ut iste cumque. Nisi exercitationem vel assumenda quam? Voluptatum numquam adipisci blanditiis et dolorum?
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium voluptatem repellendus
+                        ipsa illo quibusdam, eaque ullam alias sint sunt atque perferendis, rem culpa. Qui explicabo,
+                        magnam, molestiae sapiente, at quas omnis fugiat placeat pariatur vel eos? Pariatur molestias
+                        vel sint dolores, enim soluta placeat cumque doloremque est. Sapiente, voluptates numquam!
                     </x-slot>
-                 </x-title-with-subtitle-image>
+                </x-title-with-subtitle-image>
             </div>
             <div class="swiper-slide">
                 <x-title-with-subtitle-image :src="asset('storage/assets/Carousel1.png')">
@@ -18,9 +21,12 @@
                         {{ __('Example Slide 1') }}
                     </x-slot>
                     <x-slot name="desc">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium voluptatem repellendus ipsa illo quibusdam, eaque ullam alias sint sunt atque perferendis, rem culpa. Qui explicabo, magnam, molestiae sapiente, at quas omnis fugiat placeat pariatur vel eos? Pariatur molestias vel sint dolores, enim soluta placeat cumque doloremque est. Sapiente, voluptates numquam! Itaque culpa deserunt sapiente aspernatur vero nisi ut amet voluptatem reiciendis qui, ipsam ullam incidunt esse. Ipsa commodi sequi fugiat earum, architecto minima exercitationem animi blanditiis ducimus velit doloremque tempore facilis eum quos vero eius, illum ut iste cumque. Nisi exercitationem vel assumenda quam? Voluptatum numquam adipisci blanditiis et dolorum?
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium voluptatem repellendus
+                        ipsa illo quibusdam, eaque ullam alias sint sunt atque perferendis, rem culpa. Qui explicabo,
+                        magnam, molestiae sapiente, at quas omnis fugiat placeat pariatur vel eos? Pariatur molestias
+                        vel sint dolores, enim soluta placeat cumque doloremque est.
                     </x-slot>
-                 </x-title-with-subtitle-image>
+                </x-title-with-subtitle-image>
             </div>
         </div>
 
@@ -34,9 +40,9 @@
     {{-- carousel end --}}
 
     <!-- Service Start -->
-    <div class="flex py-10 justify-center gap-20 bg-primary-500">
+    <div class="flex flex-col lg:flex-row py-10 gap-8 lg:justify-center bg-primary-500">
         <div
-            class="px-5 py-14 w-60 text-xl text-white text-center rounded-lg bg-primary-500 hover:text-primary-500 hover:bg-white hover:scale-110   transition-all  ease-in-out duration-300 cursor-default">
+            class="service-item flex flex-col items-center justify-center px-4 py-10 w-full lg:w-60 text-xl text-white text-center rounded-lg bg-primary-500 hover:text-primary-500 hover:bg-white hover:scale-110 transition-all ease-in-out duration-300 cursor-default">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-book h-16 mx-auto mb-5"
                 viewBox="0 0 16 16">
                 <path
@@ -46,7 +52,7 @@
             <p class="font-light">Sekolah Terakreditasi Unggul</p>
         </div>
         <div
-            class="px-5 py-14 w-60 text-xl text-center rounded-lg bg-primary-500 text-white hover:text-primary-500 hover:bg-white transition-all  ease-in-out duration-300 hover:scale-110 cursor-default">
+            class="service-item flex flex-col items-center justify-center px-4 py-10 w-full lg:w-60 text-xl text-white text-center rounded-lg bg-primary-500 hover:text-primary-500 hover:bg-white hover:scale-110 transition-all ease-in-out duration-300 cursor-default">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 class="bi bi-building-fill-check h-16 mx-auto mb-5" viewBox="0 0 16 16">
                 <path
@@ -58,7 +64,7 @@
             <p class="font-light">Fasilitas yang Lengkap dan Memadai</p>
         </div>
         <div
-            class="px-5 py-14 w-60 text-xl text-center rounded-lg bg-primary-500 text-white hover:text-primary-500 hover:bg-white transition-all  ease-in-out duration-300 hover:scale-110 cursor-default">
+            class="service-item flex flex-col items-center justify-center px-4 py-10 w-full lg:w-60 text-xl text-white text-center rounded-lg bg-primary-500 hover:text-primary-500 hover:bg-white hover:scale-110 transition-all ease-in-out duration-300 cursor-default">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-mortarboard-fill h-16 mx-auto mb-5"
                 viewBox="0 0 16 16">
                 <path
@@ -69,6 +75,7 @@
             <h1 class="mb-3 font-semibold">Generasi Unggul</h1>
             <p class="font-light">Menghasilkan Generasi Unggul</p>
         </div>
+        <!-- ... Repeat service items as needed ... -->
     </div>
     <!-- Service End -->
 

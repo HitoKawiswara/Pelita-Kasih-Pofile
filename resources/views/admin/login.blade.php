@@ -1,5 +1,6 @@
     <x-admin-guest-layout>
         <div class="flex items-center justify-center flex-col h-screen">
+            
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="flex flex-col bg-white w-48 md:w-64 lg:w-96 p-5 shadow-lg rounded-lg mt-2">
@@ -16,6 +17,7 @@
                         class="appearance-none border rounded-md w-full py-3 px-3 leading-tight border-gray-400 focus:outline-none focus:border-primary-500 shadow-md"
                         id="login" name="login" type="text" autocomplete="off" value="{{ old('login') }}"
                         autofocus required />
+                    <x-input-error :messages="$errors->get('login')" class="mt-2" />
 
                     <!-- Password -->
                     <label class="font-medium block mb-1 mt-6 text-gray-700" for="password">
@@ -40,6 +42,7 @@
                         <input
                             class="appearance-none border rounded-md w-full py-3 px-3 leading-tight border-gray-400 focus:outline-none focus:border-primary-500 text-gray-700 pr-16 js-password shadow-md"
                             id="password" name="password" type="password" autocomplete="off" required />
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
 
                     @if (Route::has('password.request'))
